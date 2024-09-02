@@ -24,7 +24,7 @@
                 <div class="md:col-span-2">
                     <div>
                         <img src="https://files.qatarliving.com/styles/image_h_xlarge_1600x900/s3/post/2024/09/02/QATAR_JOB_LEAD_QATAR_LIVING.jpg?itok=wY_y3VTj"
-                            alt="Qatar flags" class="w-[55rem] h-[400px]  rounded-lg mb-4">
+                            alt="Qatar flags" class="w-[55rem] h-[400px]  mb-4">
                         <h2 class="text-2xl font-bold mb-2">HH The Amir issues new law on nationalization of private
                             sector
                             jobs</h2>
