@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/vendors/styles/style.css') }}" />
 
-
+    @vite('resources/js/app.js')
 </head>
 
 <body>
