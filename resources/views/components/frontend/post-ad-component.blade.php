@@ -1,4 +1,4 @@
-<button type="button"
+<a type="button" href="{{ route('user.postAdd') }}"
 class=" outline-none bg-purple-700 hover:bg-purple-800 active:bg-purple-700 {{ $extraClasses }}">
 <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" class="inline "
     viewBox="0 0 512 512">
@@ -7,4 +7,4 @@ class=" outline-none bg-purple-700 hover:bg-purple-800 active:bg-purple-700 {{ $
         data-original="#000000" />
 </svg>
 {{ $title }}
-</button>
+</a>
