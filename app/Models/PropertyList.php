@@ -12,20 +12,26 @@ class PropertyList extends Model
     use HasFactory, SoftDeletes, Sluggable;
 
     protected $fillable = [
+        'registered_user_id',
         'sub_category_id',
         'title',
         'refrence_no',
         'update_dates',
         'rate',
-        'property_owner',
-        'phone_no',
-        'whats_app',
-        'email',
         'description',
         'slug',
-        'is_rent',
         'location',
         'position',
+        'is_rent',
+        'bed_room',
+        'bathroom',
+        'internet',
+        'parking',
+        'area',
+        'kitchen_type',
+        'deposit',
+        'features',
+        'status',
     ];
 
     public function subCategory()
@@ -33,11 +39,16 @@ class PropertyList extends Model
         return $this->belongsTo(SubCategory::class);
     }
 
+    public function registeredUser()
+    {
+        return $this->belongsTo(RegisteredUser::class);
+    }
+
     public function sluggable(): array
     {
         return [
             'slug' => [
-                'source' => 'title_en'
+                'source' => 'title'
             ]
         ];
     }
@@ -49,5 +60,10 @@ class PropertyList extends Model
         static::creating(function ($propertyList) {
             $propertyList->position = static::max('position') + 1;
         });
+    }
+
+    public function files()
+    {
+        return $this->morphMany(File::class, 'model');
     }
 }

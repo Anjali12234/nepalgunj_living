@@ -13,7 +13,9 @@
             type="email" />
         <x-frontend.forms.input-type-field :value="$registeredUser?->phone_no" label="Phone No" id="phone_no" name="phone_no"
             type="text" />
-        <x-frontend.forms.select-type-field :value="$registeredUser?->gender" label="Gender" id="gender" name="gender" />
+            <x-frontend.forms.select-type-field :value="$registeredUser?->gender" label="Gender" id="gender" name="gender"
+            :options="['male' => 'Male', 'female' => 'Female', 'other' => 'Other']" />
+            {{-- <x-frontend.forms.select-type-field :value="$registeredUser?->gender" label="Gender" id="gender" name="gender" /> --}}
         <x-frontend.forms.input-type-field :value="$registeredUser?->d_o_b" label="Date of Birth" id="d_o_b" name="d_o_b"
             type="date" />
         <x-frontend.forms.input-type-field :value="$registeredUser?->registeredUserDetail?->address" label="Address" id="address" name="address"
