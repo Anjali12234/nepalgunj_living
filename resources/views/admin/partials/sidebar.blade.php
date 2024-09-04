@@ -198,6 +198,7 @@
                             <a href="{{ route('admin.setting.index') }}">System Setting</a>
                         </li>
                         <li><a href="{{ route('admin.category.index') }}">Category</a></li>
+                        <li><a href="{{ route('admin.subCategory.index') }}">Sub Category</a></li>
                         <li>
                             <a href="#">List</a>
                         </li>

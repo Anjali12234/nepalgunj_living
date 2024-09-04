@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use App\Enums\CategoryTypeEnum;
+use Attribute;
 use Cviebrock\EloquentSluggable\Sluggable;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
 
-class Category extends Model
+class SubCategory extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
 
@@ -20,20 +21,32 @@ class Category extends Model
         'image',
         'position',
         'status',
+        'category_type',
+        'category_id'
     ];
 
-    public function subCategories()
+    protected $casts=[
+       'category_type' => CategoryTypeEnum::class
+    ];
+
+    public function category()
     {
-        return $this->hasMany(SubCategory::class);
+        return $this->belongsTo(Category::class);
+    }
+
+    public function propertyLists()
+    {
+        return $this->hasMany(PropertyList::class);
     }
 
     protected function image(): Attribute
     {
         return Attribute::make(
             get: fn(?string $value) => $value ? Storage::disk('public')->url($value) : null,
-            set: fn($value) => $value ? $value->store('category', 'public') : null,
+            set: fn($value) => $value ? $value->store('subCategory', 'public') : null,
         );
     }
+
 
     public function sluggable(): array
     {
@@ -48,8 +61,8 @@ class Category extends Model
     {
         parent::boot();
 
-        static::creating(function ($category) {
-            $category->position = static::max('position') + 1;
+        static::creating(function ($subCategory) {
+            $subCategory->position = static::max('position') + 1;
         });
     }
 }

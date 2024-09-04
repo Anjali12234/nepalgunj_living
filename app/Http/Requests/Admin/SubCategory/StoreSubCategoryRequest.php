@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Category;
+namespace App\Http\Requests\Admin\SubCategory;
 
+use App\Enums\CategoryTypeEnum;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Rules\Enum;
 
-class UpdateCategoryRequest extends FormRequest
+class StoreSubCategoryRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -19,9 +21,15 @@ class UpdateCategoryRequest extends FormRequest
             'title_en' => ['required','string'],
             'title_ne' => ['required','string'],
             'position' => ['nullable','string'],
-            'slug' => ['nullable','string',Rule::unique('categories', 'slug')->ignore($this->category)],
+            'slug' => [
+                'nullable',
+                'string',
+                Rule::unique('sub_categories', 'slug')
+            ],
             'status' => ['nullable','boolean'],
-            'image' => ['nullable','image'],
+            'image' => ['required','image'],
+            'category_type' => ['required', new Enum(CategoryTypeEnum::class)],
+
         ];
     }
 }

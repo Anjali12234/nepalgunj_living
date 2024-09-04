@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="title">
-                    <h4>Property Category</h4>
+                    <h4>Sub Category</h4>
                 </div>
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
@@ -13,14 +13,14 @@
                             <a href="{{ route('admin.dashboard') }}">Home</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">
-                            Category List
+                            Sub Category List
                         </li>
                     </ol>
                 </nav>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
                 <div class="dropdown">
-                    <a class="btn btn-primary " href="{{ route('admin.category.create') }}" role="button">
+                    <a class="btn btn-primary " href="{{ route('admin.subCategory.create') }}" role="button">
                         Add
                     </a>
 
@@ -30,7 +30,7 @@
     </div>
     <div class="pd-20 card-box mb-30">
         <div class="pd-20">
-            <h4 class="text-blue h4">Category List</h4>
+            <h4 class="text-blue h4">Sub Category List</h4>
 
         </div>
         <div class="pb-20">
@@ -39,23 +39,25 @@
                     <tr>
                         <th class="table-plus datatable-nosort">S.No</th>
                         <th>Image</th>
+                        <th>Main Category</th>
                         <th>Title</th>
                         <th>Slug</th>
                         <th class="datatable-nosort">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $key => $category)
+                    @foreach ($subCategories as $key => $subCategory)
                         <tr>
                             <td class="table-plus">{{ $loop->iteration }}</td>
                             <td>
-                                <img class="rounded-circle" src="{{ $category->image }}" alt="Property Category Image"
+                                <img class="rounded-circle" src="{{ $subCategory->image }}" alt="Sub Category Image"
                                     width="100" height="100">
                             </td>
 
 
-                            <td>{{ $category->title_ne }}</td>
-                            <td>{{ $category->slug }}</td>
+                            <td>{{ $subCategory->category?->title_ne }}</td>
+                            <td>{{ $subCategory->title_ne }}</td>
+                            <td>{{ $subCategory->slug }}</td>
                             <td>
                                 <div class="dropdown">
                                     <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
@@ -64,10 +66,10 @@
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                         <a class="dropdown-item"
-                                            href="{{ route('admin.category.edit', $category) }}"><i
+                                            href="{{ route('admin.subCategory.edit', $subCategory) }}"><i
                                                 class="dw dw-edit2"></i> Edit</a>
 
-                                        <form action="{{ route('admin.category.destroy', $category) }}" method="post"
+                                        <form action="{{ route('admin.subCategory.destroy', $subCategory) }}" method="post"
                                             style="display: inline">
                                             @csrf
                                             @method('DELETE')
@@ -84,7 +86,7 @@
 
                 </tbody>
             </table>
-            {{ $categories->links() }}
+            {{ $subCategories->links() }}
         </div>
     </div>
 

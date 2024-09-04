@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Category\StoreCategoryRequest;
-use App\Http\Requests\Category\UpdateCategoryRequest;
+use App\Http\Requests\Admin\Category\StoreCategoryRequest;
+use App\Http\Requests\Admin\Category\UpdateCategoryRequest;
 use App\Models\Category;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -18,8 +18,7 @@ class CategoryController extends Controller
     }
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.category.create',compact('categories'));
+        return view('admin.category.create');
     }
 
     public function store(StoreCategoryRequest $request)
@@ -31,8 +30,7 @@ class CategoryController extends Controller
 
     public function edit(Category $category)
     {
-        $categories = Category::all();
-        return view('admin.category.edit',compact('categories','category'));
+        return view('admin.category.edit',compact('category'));
     }
 
     public function update(UpdateCategoryRequest $request, Category $category)

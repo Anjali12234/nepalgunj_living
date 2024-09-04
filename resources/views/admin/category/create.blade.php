@@ -42,23 +42,7 @@
                 @csrf
 
                 <div class="col-md-12 row">
-                    <div class="form-group col-md-6">
-                        <label>Main Category</label>
-                        <select class="custom-select2 form-control" name="category_id"
-                            style="width: 100%; height: 38px">
-                            <option value="" >Choose Main Category</option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title_ne }}</option>
-                                @endforeach
 
-
-                        </select>
-                        <span class="text-warning">
-                            @error('category_id')
-                                {{ $message }}
-                            @enderror
-                        </span>
-                    </div>
                     <div class="form-group col-md-6">
                         <label for="title_en">English Title</label>
                         <input class="form-control" id="title_en" name="title_en" value="{{ old('title_en') }}"
@@ -69,8 +53,6 @@
                             @enderror
                         </span>
                     </div>
-                </div>
-                <div class="col-md-12 row">
                     <div class="form-group col-md-6">
                         <label for="title_ne">Nepali Title</label>
                         <input class="form-control" id="title_ne" name="title_ne" type="text"
@@ -81,6 +63,9 @@
                             @enderror
                         </span>
                     </div>
+                </div>
+                <div class="col-md-12 row">
+
                     <div class="form-group col-md-6">
                         <label for="image">Image</label>
                         <input class="form-control" id="image" name="image" type="file"
