@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropertyList\StorePropertyListRequest;
+use App\Http\Requests\PropertyList\UpdatePropertyListRequest;
 use App\Models\PropertyList;
-use App\Http\Requests\StorePropertyListRequest;
-use App\Http\Requests\UpdatePropertyListRequest;
 use App\Models\SubCategory;
 
 class PropertyListController extends Controller
@@ -16,9 +16,15 @@ class PropertyListController extends Controller
     }
 
 
-    public function store(StorePropertyListRequest $request)
+    public function store(StorePropertyListRequest $request, SubCategory $subCategory)
     {
-        //
+        PropertyList::create(
+            $request->validated() + [
+                'sub_category_id' => $subCategory->id,
+            ]
+        );
+        alert("form submitted");
+        return back();
     }
 
     /**

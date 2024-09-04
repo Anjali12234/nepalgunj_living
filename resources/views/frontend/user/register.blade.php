@@ -62,11 +62,9 @@
                         name="phone_no"
                         type="text"
                         />
-                        <x-frontend.forms.select-type-field
-                        label="Gender"
-                        id="gender"
-                        name="gender"
-                        />
+                        <x-frontend.forms.select-type-field label="Gender" id="gender" name="gender"
+                        :options="['male' => 'Male', 'female' => 'Female', 'other' => 'Other']" />
+
                         <x-frontend.forms.input-type-field
                         label="Date of Birth"
                         id="d_o_b"

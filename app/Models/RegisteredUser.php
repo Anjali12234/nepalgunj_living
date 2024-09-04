@@ -43,4 +43,10 @@ class RegisteredUser extends Authenticatable
     {
         return $this->hasOne(RegisteredUserDetail::class);
     }
+
+    public function propertyLists()
+    {
+        return $this->hasMany(PropertyList::class);
+    }
+
 }
