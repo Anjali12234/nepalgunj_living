@@ -46,12 +46,14 @@
                 </div> --}}
                 <div class="w-2/3">
                     <div class="relative right-0">
-                        <ul class="relative flex flex-wrap p-1 list-none rounded-xl bg-blue-gray-50/60" data-tabs="tabs" role="list">
+                        <ul class="relative flex flex-wrap p-1 list-none rounded-xl bg-blue-gray-50/60" data-tabs="tabs"
+                            role="list">
                             @foreach ($categories as $key => $category)
                                 <li class="z-30 flex-auto text-center">
-                                    <a href="#{{ $category->title_en }}"
-                                       class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
-                                       data-tab-target="#{{ $category->category?->title_ne }}" role="tab" aria-selected="false">
+                                    <a href="#"
+                                        class="z-30 flex items-center justify-center w-full px-0 py-1 mb-0 transition-all ease-in-out border-0 rounded-lg cursor-pointer text-slate-700 bg-inherit"
+                                        data-tab-target="#{{ $category->title_ne }}" role="tab"
+                                        aria-selected="false">
                                         <span class="ml-1">{{ $category->title_ne }}</span>
                                     </a>
                                 </li>
@@ -61,10 +63,19 @@
                         <div data-tab-content="" class="p-5">
                             @foreach ($categories as $category)
                                 <div class="hidden opacity-0" id="{{ $category->title_en }}" role="tabpanel">
-                                    <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit text-blue-gray-500">
-                                        {{ $category->title_en }}
-                                    </p>
-
+                                    @foreach ($category->subCategories as $subCategory)
+                                        @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum
+                                        ::PROPERTIES)
+                                            <a href="
+                                            {{ route('user.property',$subCategory) }}
+                                             ">
+                                                <p
+                                                    class="block font-sans text-base antialiased font-light leading-relaxed text-inherit text-blue-gray-500">
+                                                    {{ $subCategory->title_en }}
+                                                </p>
+                                            </a>
+                                        @endif
+                                    @endforeach
                                 </div>
                             @endforeach
                         </div>
@@ -92,12 +103,12 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('[data-tab-target]');
             const tabContents = document.querySelectorAll('[role="tabpanel"]');
 
             tabs.forEach(tab => {
-                tab.addEventListener('click', function (e) {
+                tab.addEventListener('click', function(e) {
                     e.preventDefault();
 
                     tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
@@ -107,7 +118,8 @@
                     });
 
                     tab.setAttribute('aria-selected', 'true');
-                    const targetContent = document.querySelector(tab.getAttribute('data-tab-target'));
+                    const targetContent = document.querySelector(tab.getAttribute(
+                        'data-tab-target'));
                     targetContent.classList.remove('hidden', 'opacity-0');
                     targetContent.classList.add('block', 'opacity-100');
                 });

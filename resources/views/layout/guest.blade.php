@@ -18,6 +18,7 @@
 
     {{ $slot }}
 
+
     {{-- hero section --}}
     <div class=" mx-16 overflow-hidden">
         <div class="container mx-auto p-4">
@@ -330,7 +331,6 @@
         </div>
 
     </div>
-
 
 </body>
 
