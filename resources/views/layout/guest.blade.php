@@ -17,9 +17,7 @@
 
 
     {{ $slot }}
-<<<<<<< HEAD
-   
-=======
+
 
     {{-- hero section --}}
     <div class=" mx-16 overflow-hidden">
@@ -334,8 +332,6 @@
 
     </div>
 
-
->>>>>>> 436c5c053239100d89e14308c6fa503bcf55581c
 </body>
 
 
