@@ -36,7 +36,7 @@
             <h1 class="font-bold text-xl text-purple-950">Add the complete detail of your property</h1>
             @include('error')
 
-            <form class="mt-8" action="{{ route('user.store',$subCategory) }}" method="POST" enctype="multipart/form-data">
+            <form class="mt-8" action="{{ route('user.property.store',$subCategory) }}" method="POST" enctype="multipart/form-data">
                @csrf
                 <div class="block md:grid grid-cols-4 pr-16">
                     <div class="col-span-2 mr-6">
