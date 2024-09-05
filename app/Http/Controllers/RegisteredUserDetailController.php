@@ -13,7 +13,7 @@ class RegisteredUserDetailController extends Controller
     public function index()
     {
         $registeredUser = Auth::guard('registered-user')->user();
-        return view('frontend.user.dashboard.dashboard',compact('registeredUser'));
+        return view('frontend.user.dashboard.profile-setting',compact('registeredUser'));
     }
 
 

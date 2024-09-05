@@ -6,6 +6,7 @@ use App\Http\Requests\PropertyList\StorePropertyListRequest;
 use App\Http\Requests\PropertyList\UpdatePropertyListRequest;
 use App\Models\PropertyList;
 use App\Models\SubCategory;
+use Illuminate\Support\Facades\Auth;
 
 class PropertyListController extends Controller
 {
@@ -21,23 +22,20 @@ class PropertyListController extends Controller
         PropertyList::create(
             $request->validated() + [
                 'sub_category_id' => $subCategory->id,
+                'registered_user_id' => Auth::guard('registered-user')->user()->id,
             ]
         );
         alert("form submitted");
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(PropertyList $propertyList)
+    public function index(SubCategory $subCategory)
     {
-        //
+        return view('frontend.user.propertyList.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
+
     public function edit(PropertyList $propertyList)
     {
         //
