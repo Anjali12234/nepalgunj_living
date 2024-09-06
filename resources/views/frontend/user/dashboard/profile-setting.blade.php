@@ -1,11 +1,11 @@
 @extends('frontend.user.dashboard.dashboard')
 
 @section('content')
-<div class="content px-7 col-span-3">
+<div class="content px-5  md:px-7 col-span-3">
     <h1 class="font-semibold text-3xl">Profile Setting</h1>
     <h1 class="font-semibold text-2xl mt-5">General </h1>
     @include('error')
-    <form class="ml-4 md:mx-0 font-[sans-serif] my-3 mt-3" action="{{ route('user.profile.store') }}" method="POST"
+    <form class="ml-0 md:ml-4 md:mx-0 font-[sans-serif] my-3 mt-3" action="{{ route('user.profile.store') }}" method="POST"
         enctype="multipart/form-data">
         @csrf
 

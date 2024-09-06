@@ -92,7 +92,8 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <img src="{{ asset('assets/backend/vendors/images/img.jpg')}}" alt="" />
+                                    {{-- <img src="{{ asset('assets/backend/vendors/images/img.jpg')}}" alt="" /> --}}
+                                    <img src="{{ setting()?->logo }}" alt="" />
                                     <h3>John Doe</h3>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -102,7 +103,9 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="{{ asset('assets/backend/vendors/images/photo1.jpg')}}" alt="" />
+                                    {{-- <img src="{{ asset('assets/backend/vendors/images/photo1.jpg')}}" alt="" /> --}}
+                                    <img src="{{ setting()?->logo }}" alt="" />
+
                                     <h3>Lea R. Frith</h3>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -163,8 +166,10 @@
                     role="button"
                     data-toggle="dropdown"
                 >
-                    <span class="user-icon">
-                        <img src="{{ asset('assets/backend/vendors/images/photo1.jpg')}}" alt="" />
+                    <span class="user-icon" >
+                        <img class="pt-3" src="{{ setting()?->logo1 }}" height="100" width="100" alt="" />
+
+                        {{-- <img src="{{ asset('assets/backend/vendors/images/photo1.jpg')}}" alt="" /> --}}
                     </span>
                     <span class="user-name">{{ Auth::user()->name }}</span>
                 </a>

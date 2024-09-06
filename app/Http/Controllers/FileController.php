@@ -11,7 +11,7 @@ class FileController extends Controller
     {
         $this->deleteFile($file->file);
         $file->delete();
-      alert('file deleted successfully');
+        alert('file deleted successfully');
         return back();
     }
 }

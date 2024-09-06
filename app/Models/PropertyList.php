@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\HasReferenceNumber;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,13 +11,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class PropertyList extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
+    use HasReferenceNumber;
 
     protected $fillable = [
         'registered_user_id',
         'sub_category_id',
         'title',
-        'refrence_no',
-        'update_dates',
+        'reference_no',
         'rate',
         'description',
         'slug',
@@ -66,4 +67,10 @@ class PropertyList extends Model
     {
         return $this->morphMany(File::class, 'model');
     }
+
+    // public function generateReferenceNumber()
+    // {
+    //     $randomNumber = rand(1000, 9999);
+    //     return 'VEH-' . $randomNumber . '-' . now()->format('Ymd');
+    // }
 }

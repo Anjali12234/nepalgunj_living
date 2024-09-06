@@ -19,11 +19,11 @@
     <div class="px-0 pt-10 md:px-20 md:pt-[6px] ">
         @include('frontend.user.dashboard.userhead')
 
-       <div class="grid grid-cols-4 mt-4">
-        <div>
-           @include('frontend.user.dashboard.layout.sidebar')
+        <div class="grid grid-cols-1 md:grid-cols-4 mt-4">
+            <div>
+                @include('frontend.user.dashboard.layout.sidebar')
+            </div>
+            @yield('content')
         </div>
-@yield('content')
-       </div>
     </div>
 </x-guest-layout>

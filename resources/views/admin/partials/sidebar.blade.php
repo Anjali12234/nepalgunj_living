@@ -199,20 +199,16 @@
                         </li>
                         <li><a href="{{ route('admin.category.index') }}">Category</a></li>
                         <li><a href="{{ route('admin.subCategory.index') }}">Sub Category</a></li>
-                        <li>
-                            <a href="#">List</a>
-                        </li>
-
 
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-table"></span
-                        ><span class="mtext">Tables</span>
+                        ><span class="mtext">Registered User</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="basic-table.html">Basic Tables</a></li>
+                        <li><a href="{{ route('admin.registeredUser.index') }}">User</a></li>
                         <li><a href="datatable.html">DataTables</a></li>
                     </ul>
                 </li>
