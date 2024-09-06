@@ -25,7 +25,7 @@ class AuthRegisteredUserController extends Controller
     $registeredUser = RegisteredUser::create($request->validated());
     event(new Registered($registeredUser));
     Auth::guard('registered-user')->login($registeredUser);
-    return redirect()->route('user.dashboard');
+    return redirect()->route('user.timeline');
 }
 
 
@@ -34,7 +34,7 @@ class AuthRegisteredUserController extends Controller
     {
         $request->authenticate();
 
-        return redirect()->intended(route('user.dashboard', absolute: false));
+        return redirect()->intended(route('user.timeline', absolute: false));
 
     }
 

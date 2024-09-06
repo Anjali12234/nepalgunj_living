@@ -67,6 +67,7 @@
                                         @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum
                                         ::PROPERTIES)
                                             <a href="
+                                            {{-- {{ route('user.property',$subCategory) }} --}}
                                             {{ route('user.property',$subCategory) }}
                                              ">
                                                 <p
