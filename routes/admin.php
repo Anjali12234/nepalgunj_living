@@ -20,5 +20,5 @@ Route::prefix('settings')->group(function () {
 });
 Route::prefix('registerdUser')->group(function () {
     Route::resource('registeredUser', RegisteredUserController::class);
-
+    Route::put('registeredUser/{registeredUser}/updateStatus', [RegisteredUserController::class, 'updateStatus'])->name('registeredUser.updateStatus');
 });
