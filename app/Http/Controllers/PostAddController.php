@@ -9,6 +9,7 @@ class PostAddController extends Controller
 {
     public function index()
     {
+        
         $categories = Category::with('subCategories')->get();
         return view('frontend.user.postAdd', compact('categories'));
     }
