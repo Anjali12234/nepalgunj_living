@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('gender');
             $table->string('d_o_b');
             $table->string('password');
+            $table->longText('remarks')->nullable();
             $table->string('is_active')->nullable()->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

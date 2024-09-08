@@ -38,7 +38,7 @@
 
             <form class="mt-8" action="{{ route('user.property.store',$subCategory) }}" method="POST" enctype="multipart/form-data">
                @csrf
-                <div class="block md:grid grid-cols-3 pr-16">
+                <div class="block md:grid grid-cols-4 pr-16">
                     <div class="col-span-2 mr-6">
                         <x-frontend.forms.select-type-field label="Is Rent" id="is_rent" name="is_rent" class="text-sm font-semibold"
                             :options="['rent' => 'For Rent', 'sale' => 'For Sale']" />
@@ -88,10 +88,9 @@
                         />
 
 
-                        <button type="button submit"
-                        class="!mt-8 px-6 pt-1 pb-2  bg-[#333] hover:bg-[#444] text-sm font-semibold text-white mx-auto block">Submit</button>
+
                     </div>
-                    <div class="">
+                    <div class="col-span-2">
 
                         <x-frontend.forms.select-type-field label="Internet" id="internet" name="internet" class="text-sm font-semibold"
                         :options="['include' => 'Include', 'exclude' => 'Exclude']" />
@@ -104,22 +103,49 @@
                         label="Square Feet"
                         id="area"
                         name="area"
-                        type="type"
+                        type="text"
                         class="text-sm font-semibold"
                         {{-- placeholder="Per Month" --}}
                         />
 
                         <x-frontend.forms.input-type-field
-                        label="Parking"
-                        id="parking"
-                        name="parking"
-                        type="type"
+                        label="Kitchen Type"
+                        id="kitchen_type"
+                        name="kitchen_type"
+                        type="text"
                         class="text-sm font-semibold"
                         {{-- placeholder="Per Month" --}}
                         />
-                    </div>
+                        <x-frontend.forms.input-type-field
+                        label="Deposit"
+                        id="deposit"
+                        name="deposit"
+                        type="number"
+                        class="text-sm font-semibold"
+                        {{-- placeholder="Per Month" --}}
+                        />
 
+
+                        <x-frontend.forms.text-area-component
+                        label="Features"
+                        id="features"
+                        name="features" class="text-sm font-semibold"/>
+
+                        <x-frontend.forms.file-component
+                        label="House Image Of All Side"
+                        id="files"
+                        name="files[]"
+                        type="file"
+                        class="text-sm font-semibold" multiple="multiple"
+                        {{-- placeholder="Per Month" --}}
+                        />
+                    </div>
+                    <div class="col-span-4 flex justify-center mt-8">
+                        <button type="submit"
+                            class="px-6 pt-1 pb-2 bg-[#333] hover:bg-[#444] text-sm font-semibold text-white">Submit</button>
+                    </div>
                 </div>
+
             </form>
         </div>
 

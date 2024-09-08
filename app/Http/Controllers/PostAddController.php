@@ -12,4 +12,6 @@ class PostAddController extends Controller
         $categories = Category::with('subCategories')->get();
         return view('frontend.user.postAdd', compact('categories'));
     }
+
+
 }
