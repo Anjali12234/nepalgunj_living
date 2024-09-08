@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RegisteredUserController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SubCategoryController;
+use App\Http\Controllers\MailController;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,6 @@ Route::prefix('registerdUser')->group(function () {
     Route::resource('registeredUser', RegisteredUserController::class);
     Route::put('registeredUser/{registeredUser}/updateStatus', [RegisteredUserController::class, 'updateStatus'])->name('registeredUser.updateStatus');
 });
+
+
+Route::get('send-email',[MailController::class, 'sendEmail'])->name('send-email');

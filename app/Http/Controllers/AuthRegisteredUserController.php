@@ -21,12 +21,12 @@ class AuthRegisteredUserController extends Controller
     }
 
     public function register(StoreRegisteredUserRequest $request)
-{
-    $registeredUser = RegisteredUser::create($request->validated());
-    event(new Registered($registeredUser));
-    Auth::guard('registered-user')->login($registeredUser);
-    return redirect()->route('user.timeline');
-}
+    {
+        $registeredUser = RegisteredUser::create($request->validated());
+        event(new Registered($registeredUser));
+        Auth::guard('registered-user')->login($registeredUser);
+        return redirect()->route('user.timeline');
+    }
 
 
 
@@ -35,7 +35,6 @@ class AuthRegisteredUserController extends Controller
         $request->authenticate();
 
         return redirect()->intended(route('user.timeline', absolute: false));
-
     }
 
     public function edit(RegisteredUser $registeredUser)

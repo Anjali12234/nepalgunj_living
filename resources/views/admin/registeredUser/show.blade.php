@@ -41,7 +41,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#profile2" role="tab"
-                                    aria-selected="false">Account Verify</a>
+                                    aria-selected="false">All Document</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#contact2" role="tab"
@@ -53,27 +53,7 @@
                                 <div class="pd-20">
                                     <div class="col-md-12">
                                         <div class="row">
-                                            <div class="col-12 col-md-6">
-                                                <div class="">
-                                                    <p>Cover Image</p>
-                                                    <img src="{{ $registeredUser?->registeredUserDetail?->cover_image }}"
-                                                        class="img-fluid mb-2 " height="100" width="100"
-                                                        alt="Cover Image"> <br>
-                                                </div>
-                                                <div class="">
-                                                    <p>Profile Image</p>
-                                                    <img src="{{ $registeredUser?->registeredUserDetail?->image }}"
-                                                        class="img-fluid" height="100" width="100" alt="Profile Image">
 
-                                                </div>
-                                                <div class="">
-                                                    <p>Citizenship Image (Front)</p>
-                                                    <img src="{{ $registeredUser?->registeredUserDetail?->citizenship_image_front }}"
-                                                        class="img-fluid" height="100" width="100" alt="Profile Image">
-
-
-                                                </div>
-                                            </div>
                                             <div class="col-12 col-md-6">
                                                 <div class="d-flex">
                                                     <p class="me-2">Name:</p>
@@ -112,9 +92,27 @@
                             </div>
                             <div class="tab-pane fade" id="profile2" role="tabpanel">
                                 <div class="pd-20">
-                                    <form action="">
+                                    <div class="col-12 col-md-6">
+                                        <div class="">
+                                            <p>Cover Image</p>
+                                            <img src="{{ $registeredUser?->registeredUserDetail?->cover_image }}"
+                                                class="img-fluid mb-2 " height="100" width="100"
+                                                alt="Cover Image"> <br>
+                                        </div>
+                                        <div class="">
+                                            <p>Profile Image</p>
+                                            <img src="{{ $registeredUser?->registeredUserDetail?->image }}"
+                                                class="img-fluid" height="100" width="100" alt="Profile Image">
 
-                                    </form>
+                                        </div>
+                                        <div class="">
+                                            <p>Citizenship Image (Front)</p>
+                                            <img src="{{ $registeredUser?->registeredUserDetail?->citizenship_image_front }}"
+                                                class="img-fluid" height="100" width="100" alt="Profile Image">
+
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="contact2" role="tabpanel">

@@ -47,8 +47,9 @@ class RegisteredUserDetailController extends Controller
             ];
 
             $registeredUser->update($registeredUserUpdatedData);
+            return redirect()->back()->with('status', 'You have successfully addedd your detail. To add post wait until the your account is not vrified. For other information contact on the given contact on the site.');
 
-            return back();
+            // return back();
         }
     }
 
