@@ -5,10 +5,14 @@ namespace App\Enums;
 enum CategoryTypeEnum: string
 {
     case PROPERTIES = 'property';
-    case VEHICLES = 'vehicles';
-    case CLASSIFIEDS = 'classifieds';
-    case MOBILE_TABLET = 'mobile_tablet';
-    case SERVICES = 'services';
+    case HEALTH_CARE = 'health_care';
+    case EDUCATION = 'education';
+    case HOSPITALITY = 'hospitality';
+    case CONSTRUCTION = 'construction';
+    case JOBS_VACANCY = 'jobs_vacancy';
+    case ORGANIZATIONS = 'organizations';
+    case SHOW_ROOM = 'show_room';
+    case OTHER_BUSINESS = 'other_business';
 
     public function label()
     {
@@ -19,10 +23,14 @@ enum CategoryTypeEnum: string
     {
         return match ($value) {
             self::PROPERTIES => 'property',
-            self::VEHICLES => 'vehicles',
-            self::CLASSIFIEDS => 'classifieds',
-            self::MOBILE_TABLET => 'mobile_tablet',
-            self::SERVICES => 'services'
+            self::HEALTH_CARE => 'health_care',
+            self::EDUCATION => 'education',
+            self::HOSPITALITY => 'hospitality',
+            self::CONSTRUCTION => 'construction',
+            self::JOBS_VACANCY => 'jobs_vacancy',
+            self::ORGANIZATIONS => 'organizations',
+            self::SHOW_ROOM => 'show_room',
+            self::OTHER_BUSINESS => 'other_business',
         };
     }
 }

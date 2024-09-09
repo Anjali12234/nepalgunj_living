@@ -30,8 +30,18 @@
                                             @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::PROPERTIES)
                                                 <a
                                                     href="
-                                            {{-- {{ route('user.property',$subCategory) }} --}}
                                             {{ route('user.property', $subCategory) }}
+                                             ">
+                                                    <p
+                                                        class="block font-sans text-base antialiased font-light leading-relaxed text-inherit text-blue-gray-500">
+                                                        {{ $subCategory->title_en }}
+                                                    </p>
+                                                </a>
+                                            @endif
+                                            @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::HEALTH_CARE)
+                                                <a
+                                                    href="#
+
                                              ">
                                                     <p
                                                         class="block font-sans text-base antialiased font-light leading-relaxed text-inherit text-blue-gray-500">
