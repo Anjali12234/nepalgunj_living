@@ -6,19 +6,17 @@
         <div class="hidden lg:block my-5 mr-11">
             <h1 class="text-gray-800 font-medium text-2xl">About</h1>
             <div class="text-gray-800 font-medium text-base my-3 font-serif text-justify">
-                <p class="leading-5 mb-2">In order to post classified ads on Qatar Living you have to verify your
-                    account. This is how it works:
+                <p class="leading-5 mb-2">To post classified ads on Qatar Living, you need to verify your account. Here’s how it works:</p>
+                <p class="leading-5 mb-2">
+                    Register with your correct mobile number and email address, and login to the site add the complete detail and wait until your account is verified.
+                    A verification message will be sent to your email
                 </p>
                 <p class="leading-5 mb-2">
-                    You must register with a mobile phone number
-                    An SMS will be sent to your phone that you have to enter on "Verify my account"
+                    Once verified, you can post your ad. All ads will be displayed on the site.
                 </p>
-                <p class="leading-5 mb-2"> page after logging in
-                    Your can now post classified ads. Previously posted ads will be published within minutes</p>
             </div>
-
-
         </div>
+
         <div class="col-span-3 ">
 
 
@@ -39,57 +37,35 @@
                 <div class=""></div>
 
                 <div class="hidden peer-checked/tab-one:block">
+
+
                     @include('error')
                     <form class="ml-4 md:mx-0 font-[sans-serif] my-3" action="{{ route('register') }}" method="POST"
                         enctype="multipart/form-data">
                         @csrf
 
-                        <x-frontend.forms.input-type-field
-                        label="Username"
-                        id="username"
-                        name="username"
-                        type="text"
-                        />
-                        <x-frontend.forms.input-type-field
-                        label="Email Address"
-                        id="email"
-                        name="email"
-                        type="email"
-                        />
-                        <x-frontend.forms.input-type-field
-                        label="Phone No"
-                        id="phone_no"
-                        name="phone_no"
-                        type="text"
-                        />
+                        <x-frontend.forms.input-type-field label="Username" id="username" name="username"
+                            type="text" />
+                        <x-frontend.forms.input-type-field label="Email Address" id="email" name="email"
+                            type="email" />
+                        <x-frontend.forms.input-type-field label="Phone No" id="phone_no" name="phone_no"
+                            type="text" />
                         <x-frontend.forms.select-type-field label="Gender" id="gender" name="gender"
-                        :options="['male' => 'Male', 'female' => 'Female', 'other' => 'Other']" />
+                            :options="['male' => 'Male', 'female' => 'Female', 'other' => 'Other']" />
 
-                        <x-frontend.forms.input-type-field
-                        label="Date of Birth"
-                        id="d_o_b"
-                        name="d_o_b"
-                        type="date"
-                        />
+                        <x-frontend.forms.input-type-field label="Date of Birth" id="d_o_b" name="d_o_b"
+                            type="date" />
 
-                        <x-frontend.forms.input-type-field
-                        label="Password"
-                        id="password"
-                        name="password"
-                        type="password"
-                        />
-                        <x-frontend.forms.input-type-field
-                        label="Confirm Password"
-                        id="password_confirmation"
-                        name="password_confirmation"
-                        type="password"
-                        />
+                        <x-frontend.forms.input-type-field label="Password" id="password" name="password"
+                            type="password" />
+                        <x-frontend.forms.input-type-field label="Confirm Password" id="password_confirmation"
+                            name="password_confirmation" type="password" />
 
                         <button type="button submit"
                             class="!mt-8 px-6 pt-1 pb-2  bg-[#333] hover:bg-[#444] text-xs text-white mx-auto block">Submit</button>
                     </form>
                 </div>
-              @include('frontend.user.login')
+                @include('frontend.user.login')
 
 
             </section>
