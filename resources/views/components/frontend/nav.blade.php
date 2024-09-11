@@ -36,7 +36,7 @@ style="">
                 <a href="{{ route('properties') }}"
                     class='hover:text-[#007bff] text-[#007bff] block font-semibold text-[15px]'>Properties</a>
             </li>
-            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
+            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href="{{ route('vehicles') }}"
                     class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Vehicles</a>
             </li>
             <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
