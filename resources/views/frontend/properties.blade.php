@@ -406,14 +406,47 @@
                         class="bg-white text-purple-800 px-4 py-3  font-semibold hover:bg-purple-200">Subscribe</button>
                 </div>
             </div>
-            <div class="flex gap-8 mt-16 mb-8 justify-center items-center">
-                <p class="text-xs">Advertising Terms</p>
-                <p class="text-xs">Website Terms</p>
-                <p class="text-xs">Rules for posting ads</p>
-                <p class="text-xs">Help</p>
+
+
+        </div>
+    </div>
+    <div class="grid grid-cols-1  mx-24 md:grid-cols-2 gap-4">
+        <div class="col-span-1 mb-10 mt-8">
+            <div class="items-center justify-center ">
+                <div class="flex justify-center items-center space-x-2">
+                    <a href="#" class="p-2 rounded bg-purple-400">
+                        <i class="ti ti-brand-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="p-2 rounded bg-purple-400">
+                        <i class="text-2xl ti ti-brand-facebook"></i>
+                    </a>
+                    <a href="#" class="p-2 rounded bg-purple-400">
+                        <i class="text-2xl ti ti-brand-x"></i>
+                    </a>
+                    <a href="#" class="p-2 rounded bg-purple-400">
+                        <i class="text-2xl ti ti-brand-youtube"></i>
+                    </a>
+                    <a href="#" class="p-2 rounded bg-purple-400">
+                        <i class="text-2xl ti ti-brand-linkedin"></i>
+                    </a>
+                    <a href="#" class=" p-2 rounded  bg-purple-400">
+                        <i class="text-2xl ti ti-brand-tiktok"></i>
+                    </a>
+                    <a href="#" class=" p-2 rounded bg-purple-400">
+                        <i class="text-2xl ti ti-brand-snapchat"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 ">
+            <div class="flex gap-8 mt-8 mb-10 justify-center items-center">
+                <p class="text-xs text-gray-400">Advertising Terms</p>
+                <p class="text-xs text-gray-400">Website Terms</p>
+                <p class="text-xs text-gray-400">Rules for posting ads</p>
+                <p class="text-xs text-gray-400">Help</p>
 
             </div>
-
         </div>
     </div>
 
