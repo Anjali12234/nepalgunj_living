@@ -12,6 +12,7 @@ export default {
         fontFamily: {
             franklin: ['"Franklin Gothic Book"', 'sans-serif'],
           },
+
     },
   },
   plugins: [

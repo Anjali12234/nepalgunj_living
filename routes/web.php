@@ -26,3 +26,12 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::post('logout', [AuthController::class, 'destroy'])
 ->name('logout');
+
+Route::controller(AuthRegisteredUserController::class)->group(function () {
+
+    Route::prefix('user')->group(function () {
+        Route::get('register','registerPage')->name('register');
+        Route::post('register','register')->name('register');
+        Route::post('login','login')->name('userlogin');
+    });
+});

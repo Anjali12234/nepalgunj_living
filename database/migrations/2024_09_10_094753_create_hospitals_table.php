@@ -9,12 +9,12 @@ return new class extends Migration
 
     public function up(): void
     {
-        Schema::create('doctors', function (Blueprint $table) {
+        Schema::create('hospitals', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sub_category_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('registered_user_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('branch_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->string('doctor_name');
+            $table->string('hospital_name');
             $table->string('reference_no')->nullable();
             $table->string('department');
             $table->string('n_m_c_no');
@@ -41,6 +41,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('doctors');
+        Schema::dropIfExists('hospitals');
     }
 };

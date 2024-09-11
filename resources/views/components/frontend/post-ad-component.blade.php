@@ -1,5 +1,5 @@
-<a type="button" href="{{ route('user.postAdd') }}"
-class=" outline-none bg-purple-700 hover:bg-purple-800 active:bg-purple-700 {{ $extraClasses }}">
+<a type="button" href="{{ route('user.postAd.index') }}"
+class=" outline-none bg-neutral-700 hover:bg-neutral-800 active:bg-neutral-800 {{ $extraClasses }}">
 <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" class="inline "
     viewBox="0 0 512 512">
     <path

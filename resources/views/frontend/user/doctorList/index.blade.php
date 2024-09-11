@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="content px-5  md:px-7 col-span-3 mt-8 md:mt-0">
-        <h1 class="font-semibold text-3xl">Property List</h1>
+        <h1 class="font-semibold text-3xl">Health Care List</h1>
         <div class="border-b border-gray-200 dark:border-neutral-700">
             <nav class="flex gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
                 @foreach ($categories as $category)
                     @foreach ($category->subCategories as $subCategory)
-                        @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::PROPERTIES)
+                        @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::HEALTH_CARE)
                             <button type="button"
                                 class="hs-tab-active:font-semibold
                     hs-tab-active:border-blue-600 hs-tab-active:text-blue-600
@@ -30,7 +30,7 @@
         <div class="mt-3">
             @foreach ($categories as $category)
                 @foreach ($category->subCategories as $subCategory)
-                    @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::PROPERTIES)
+                    @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::HEALTH_CARE)
                         <div id="tab-content-{{ $subCategory->id }}" role="tabpanel"
                             aria-labelledby="tab-{{ $subCategory->id }}" class="{{ $loop->first ? '' : 'hidden' }}">
 
@@ -41,58 +41,50 @@
                                         <div class="overflow-hidden">
                                             <x-frontend.forms.table-component :headers="[
                                                 'Reference No',
-                                                'Title',
-                                                'SubCategory',
-                                                'Rate',
-                                                'Bed Room',
-                                                'Bathroom',
+                                                'Doctor Name',
+                                                'Department',
+                                                'NMC No',
+                                                'Phone Number',
                                                 'Action',
-                                            ]" :data="$subCategory->propertyLists">
-                                                @foreach ($subCategory->propertyLists as $propertyList)
+                                            ]" :data="$subCategory->doctors">
+                                                @foreach ($subCategory->doctors as $doctorList)
                                                     <tr>
                                                         <td
                                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
-                                                            {{ $propertyList->reference_no }}
+                                                            {{ $doctorList->reference_no }}
                                                         </td>
                                                         <td
                                                             class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
-                                                            {{ $propertyList->title }}
+                                                            {{ $doctorList->doctor_name }}
                                                         </td>
                                                         <td
                                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
-                                                            {{ $propertyList->subCategory->title_en }}
+                                                            {{ $doctorList->department }}
                                                         </td>
                                                         <td
                                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
-                                                            {{ $propertyList->rate }}
+                                                            {{ $doctorList->n_m_c_no }}
                                                         </td>
                                                         <td
                                                             class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
-                                                            {{ $propertyList->bed_room }}
+                                                            {{ $doctorList->phone_number }}
                                                         </td>
-                                                        <td
-                                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
-                                                            {{ $propertyList->bathroom }}
-                                                        </td>
+
                                                         <td
                                                             class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium ">
                                                             <a type="button"
-                                                                href="{{ route('user.propertyLists.edit', [$subCategory->slug, $propertyList]) }}"
+                                                                href="{{ route('user.doctorList.edit', [$subCategory, $doctorList]) }}"
                                                                 class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
                                                                 <i
                                                                     class="ti ti-edit text-2xl font-bold text-purple-700"></i>
 
                                                             </a>
-                                                            {{-- <a type="button"
-                                                                href="{{ route('user.propertyLists.edit', [$subCategory->slug, $propertyList->id]) }}"
-                                                                class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
-                                                                <i class="ti ti-trash text-2xl font-bold text-red-700"></i>
-                                                            </a> --}}
+
 
                                                             <form
-                                                                action="{{ route('user.propertyList.destroy', $propertyList) }}"
-                                                                method="post" style="display: inline" {{-- <form action="{{ route('user.propertyList.destroy', [$subCategory->slug, $propertyList->id]) }}" --}}
-                                                                method="post" style="display: inline">
+                                                                action="{{ route('user.doctorList.destroy', [$subCategory, $doctorList]) }}"
+                                                                method="post" style="display: inline" method="post"
+                                                                style="display: inline">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit"
@@ -111,13 +103,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
                     @endif
                 @endforeach
             @endforeach
         </div>
-    </div>
-    <div class="min-h-72">
-        <h2>asdfasdf</h2>
     </div>
 @endsection

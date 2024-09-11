@@ -38,6 +38,10 @@ class SubCategory extends Model
     {
         return $this->hasMany(PropertyList::class);
     }
+    public function doctors()
+    {
+        return $this->hasMany(Doctor::class);
+    }
 
     protected function image(): Attribute
     {

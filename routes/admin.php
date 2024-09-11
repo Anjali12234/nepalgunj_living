@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RegisteredUserController;
 use App\Http\Controllers\Admin\SettingController;
@@ -18,6 +19,7 @@ Route::prefix('settings')->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('subCategory', SubCategoryController::class);
     Route::resource('setting', SettingController::class);
+    Route::resource('branch', BranchController::class);
 });
 Route::prefix('registerdUser')->group(function () {
     Route::resource('registeredUser', RegisteredUserController::class);
@@ -25,4 +27,3 @@ Route::prefix('registerdUser')->group(function () {
 });
 
 
-Route::get('send-email',[MailController::class, 'sendEmail'])->name('send-email');
