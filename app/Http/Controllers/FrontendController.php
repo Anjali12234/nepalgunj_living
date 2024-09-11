@@ -17,5 +17,9 @@ class FrontendController extends Controller
         return view('frontend.properties');
     }
 
+    public function vehicles()
+    {
+        return view('frontend.vehciles');
+    }
 
 }
