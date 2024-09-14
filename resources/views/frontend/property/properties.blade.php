@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="bg-sky-700 mx-24">
+    <div class="bg-sky-700 mx-24 font-mono">
         <!-- Toggle for For Rent and For Sale -->
         <div class="flex justify-center mb-4">
             <div class="flex items-center bg-white rounded-full p-1 mt-6">
@@ -13,7 +13,7 @@
             <button class="bg-white text-blue-700 px-4 py-2  focus:outline-none">Commercial</button>
         </div>
     </div>
-    <div class="bg-cyan-900 mx-24 p-4">
+    <div class="bg-cyan-900 mx-24 p-4 font-mono">
 
 
         <div class="grid grid-cols-12 gap-4">
@@ -147,7 +147,7 @@
 
 
 
-    <div class="overflow-hidden mx-24 mt-4 mb-4 grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <div class="overflow-hidden mx-24 mt-4 mb-4 grid grid-cols-1 lg:grid-cols-3 gap-4 font-mono">
         <!-- News & Articles Section -->
         <div class="col-span-1">
             <h2 class="text-xl font-semibold mb-4">News & Articles</h2>
@@ -318,7 +318,7 @@
 
     {{-- footer --}}
     <hr>
-    <div class="grid grid-cols-1 mx-24 mt-4 mb-4 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 mx-24 mt-4 mb-4 md:grid-cols-2 gap-4 font-mono">
         <div class="col-span-1">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div class="col-span-1">
@@ -417,7 +417,7 @@
 
         </div>
     </div>
-    <div class="grid grid-cols-1  mx-24 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1  mx-24 md:grid-cols-2 gap-4 font-mono">
         <div class="col-span-1 mb-10 mt-8">
             <div class="items-center justify-center ">
                 <div class="flex justify-center items-center space-x-2">
