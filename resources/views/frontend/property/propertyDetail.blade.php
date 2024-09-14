@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="mx-24 font-mono">
-        <div class="grid grid-rows-2 grid-flow-col mt-4">
+        <div class="grid grid-template-rows: repeat(1, minmax(0, 1fr)) grid-flow-col mt-4">
             <div class="grid grid-cols-12 gap-2">
                 <div class="col-span-12 md:col-span-3">
                     <p class="mb-4 text-sm tracking-widest text-cyan-600 ">
@@ -51,6 +51,7 @@
                 {{-- carsouel --}}
 
                 <div class="col-span-12 md:col-span-9">
+
                     <style>
                         .carousel-item {
                             display: none;
@@ -97,7 +98,7 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-rows-2 grid-flow-col mt-4">
+                    <div class="grid grid-template-rows: repeat(1, minmax(0, 1fr)) grid-flow-col mt-4">
                         <div class="grid grid-cols-12 gap-2">
                             <div class="col-span-12 md:col-span-9">
                                 <div class="max-w-4xl mx-auto bg-white overflow-hidden">
@@ -238,12 +239,140 @@
 
 
 
-
                 </div>
             </div>
 
         </div>
+        <div class="mb-4 mt-4">
+            <h3 class="text-xl">Similar Properties</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 mb-4">
+                <!-- Card 1 -->
+                <div class="border overflow-hidden bg-white relative">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-1" alt="Property 1">
+                    <span class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-semibold px-2 py-1">FEATURED</span>
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">5 BHK STAND ALONE VILLA</h3>
+                        <p class="text-lg font-bold text-gray-900">10,500 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> WAKRAH</p>
+                        <p class="text-xs">25 minutes ago</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Featured) -->
+                <div class="border  overflow-hidden bg-white relative">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-2" alt="Property 2">
+                    <span class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-semibold px-2 py-1">FEATURED</span>
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">Two Storey 5-BHK Luxury Villa Compound</h3>
+                        <p class="text-lg font-bold text-gray-900">10,500 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> AL HILAL</p>
+                        <p class="text-xs">6 minutes ago</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="border  overflow-hidden bg-white">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-3" alt="Property 3">
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">4 Bed | Maid room | Without A/C</h3>
+                        <p class="text-lg font-bold text-gray-900">8,000 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> AL HILAL</p>
+                        <p class="text-xs">1 hour ago</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="border  overflow-hidden bg-white">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-4" alt="Property 4">
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">AFFORDABLE COMPOUND VILLA | 03 BEDROOMS | 01 MONTH FREE</h3>
+                        <p class="text-lg font-bold text-gray-900">9,000 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> AL GHARRAFA</p>
+                        <p class="text-xs">1 hour ago</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="mb-4 mt-4">
+            <h3 class="text-xl">More ads from <span class="font-bold text-2xl"> ARON PROPERTIES</span> </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4 mb-4">
+                <!-- Card 1 -->
+                <div class="border overflow-hidden bg-white relative">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-1" alt="Property 1">
+                    <span class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-semibold px-2 py-1">FEATURED</span>
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">5 BHK STAND ALONE VILLA</h3>
+                        <p class="text-lg font-bold text-gray-900">10,500 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> WAKRAH</p>
+                        <p class="text-xs">25 minutes ago</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Featured) -->
+                <div class="border  overflow-hidden bg-white relative">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-2" alt="Property 2">
+                    <span class="absolute top-0 right-0 bg-teal-500 text-white text-xs font-semibold px-2 py-1">FEATURED</span>
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">Two Storey 5-BHK Luxury Villa Compound</h3>
+                        <p class="text-lg font-bold text-gray-900">10,500 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> AL HILAL</p>
+                        <p class="text-xs">6 minutes ago</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="border  overflow-hidden bg-white">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-3" alt="Property 3">
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">4 Bed | Maid room | Without A/C</h3>
+                        <p class="text-lg font-bold text-gray-900">8,000 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> AL HILAL</p>
+                        <p class="text-xs">1 hour ago</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="border  overflow-hidden bg-white">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F09%2F03%2F5095206%2FIS100.jpeg&w=384&q=75" class="w-full h-48 object-cover" src="image-url-4" alt="Property 4">
+                    <div class="p-4">
+                        <p class="text-sm text-blue-600">VILLA</p>
+                        <h3 class="text-xl font-bold">AFFORDABLE COMPOUND VILLA | 03 BEDROOMS | 01 MONTH FREE</h3>
+                        <p class="text-lg font-bold text-gray-900">9,000 <span class="text-sm font-light">QAR/Month</span></p>
+                    </div>
+                    <div class="px-4 pb-4 flex justify-between text-gray-500">
+                        <p class="text-xs"><i class="ti ti-location"></i> AL GHARRAFA</p>
+                        <p class="text-xs">1 hour ago</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+         {{-- footer --}}
+         <x-frontend.propertiesFooter.properties-footer/>
     </div>
+
 
     <script>
         document.getElementById('callNowBtn').addEventListener('click', function() {
