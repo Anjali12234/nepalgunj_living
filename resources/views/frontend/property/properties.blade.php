@@ -177,44 +177,51 @@
         <div class="col-span-2 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             <!-- Property Card -->
             <div class="bg-white shadow-md overflow-hidden">
-                <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F07%2F20%2F9999102%2FDSC09776_1.jpg&w=384&q=75"
-                    alt="Property Image" class="w-full h-40 object-cover">
-                <div class="p-2">
-                    <h4 class="text-xs font-bold text-gray-500 uppercase">Apartment</h4>
-                    <p class="text-lg font-semibold">Brand New Furnished Studio</p>
-                    <p class="text-lg text-blue-600 font-bold">4,300 QAR/Month</p>
-                    <div class="flex items-center gap-6">
-                        <p class="text-xs text-gray-400">FEREEJ ABDEL AZIZ</p>
-                        <p class="text-xs text-gray-400">9 hours ago</p>
+                <a href="{{ route('propertyDetails') }}">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F07%2F20%2F9999102%2FDSC09776_1.jpg&w=384&q=75"
+                        alt="Property Image" class="w-full h-40 object-cover">
+                    <div class="p-2">
+                        <h4 class="text-xs font-bold text-gray-500 uppercase">Apartment</h4>
+                        <p class="text-lg font-semibold">Brand New Furnished Studio</p>
+                        <p class="text-lg text-blue-600 font-bold">4,300 QAR/Month</p>
+                        <div class="flex items-center gap-6">
+                            <p class="text-xs text-gray-400">FEREEJ ABDEL AZIZ</p>
+                            <p class="text-xs text-gray-400">9 hours ago</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="bg-white shadow-md overflow-hidden">
-                <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F07%2F20%2F9999102%2FDSC09776_1.jpg&w=384&q=75"
-                    alt="Property Image" class="w-full h-40 object-cover">
-                <div class="p-2">
-                    <h4 class="text-xs font-bold text-gray-500 uppercase">Apartment</h4>
-                    <p class="text-lg font-semibold">Brand New Furnished Studio</p>
-                    <p class="text-lg text-blue-600 font-bold">4,300 QAR/Month</p>
-                    <div class="flex items-center gap-6">
-                        <p class="text-xs text-gray-400">FEREEJ ABDEL AZIZ</p>
-                        <p class="text-xs text-gray-400">9 hours ago</p>
+                <a href="{{ route('propertyDetails') }}">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F07%2F20%2F9999102%2FDSC09776_1.jpg&w=384&q=75"
+                        alt="Property Image" class="w-full h-40 object-cover">
+                    <div class="p-2">
+                        <h4 class="text-xs font-bold text-gray-500 uppercase">Apartment</h4>
+                        <p class="text-lg font-semibold">Brand New Furnished Studio</p>
+                        <p class="text-lg text-blue-600 font-bold">4,300 QAR/Month</p>
+                        <div class="flex items-center gap-6">
+                            <p class="text-xs text-gray-400">FEREEJ ABDEL AZIZ</p>
+                            <p class="text-xs text-gray-400">9 hours ago</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <div class="bg-white shadow-md overflow-hidden">
-                <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F07%2F20%2F9999102%2FDSC09776_1.jpg&w=384&q=75"
-                    alt="Property Image" class="w-full h-40 object-cover">
-                <div class="p-2">
-                    <h4 class="text-xs font-bold text-gray-500 uppercase">Apartment</h4>
-                    <p class="text-lg font-semibold">Brand New Furnished Studio</p>
-                    <p class="text-lg text-blue-600 font-bold">4,300 QAR/Month</p>
-                    <div class="flex items-center gap-6">
-                        <p class="text-xs text-gray-400">FEREEJ ABDEL AZIZ</p>
-                        <p class="text-xs text-gray-400">9 hours ago</p>
+                <a href="{{ route('propertyDetails') }}">
+                    <img src="https://www.qatarliving.com/_next/image?url=https%3A%2F%2Fwww.qatarliving.com%2Fq%2Fs3%2Ffiles%2Fstyles%2Fvehicle_listing_v3%2Fs3%2Fvehicles%2F2024%2F07%2F20%2F9999102%2FDSC09776_1.jpg&w=384&q=75"
+                        alt="Property Image" class="w-full h-40 object-cover">
+                    <div class="p-2">
+                        <h4 class="text-xs font-bold text-gray-500 uppercase">Apartment</h4>
+                        <p class="text-lg font-semibold">Brand New Furnished Studio</p>
+                        <p class="text-lg text-blue-600 font-bold">4,300 QAR/Month</p>
+                        <div class="flex items-center gap-6">
+                            <p class="text-xs text-gray-400">FEREEJ ABDEL AZIZ</p>
+                            <p class="text-xs text-gray-400">9 hours ago</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+
 
 
             <!-- Repeat for other property cards -->
@@ -317,12 +324,12 @@
                 <div class="col-span-1">
                     <h4 class="text-xs font-bold text-cyan-500 uppercase mb-1">
                         Properties</h4>
-                        <ul class="text-sm">
-                            <li>Apartment</li>
-                            <li>Apartment</li>
-                            <li>Apartment</li>
-                            <li>Apartment</li>
-                        </ul>
+                    <ul class="text-sm">
+                        <li>Apartment</li>
+                        <li>Apartment</li>
+                        <li>Apartment</li>
+                        <li>Apartment</li>
+                    </ul>
                 </div>
                 <div class="col-span-1">
                     <h4 class="text-xs font-bold text-green-800 uppercase mb-1">
@@ -338,16 +345,16 @@
                 <div class="col-span-1">
                     <h4 class="text-xs font-bold text-yellow-500 uppercase mb-1">
                         Classifieds</h4>
-                        <ul class="text-sm">
-                            <li>Apartment</li>
-                            <li>Apartment</li>
-                            <li>Apartment</li>
-                            <li>Apartment</li>
-                        </ul>
+                    <ul class="text-sm">
+                        <li>Apartment</li>
+                        <li>Apartment</li>
+                        <li>Apartment</li>
+                        <li>Apartment</li>
+                    </ul>
                 </div>
                 <div class="col-span-1">
                     <h4 class="text-xs font-bold text-orange-500 uppercase mb-1 flex items-center mr-4">
-                    Services
+                        Services
                     </h4>
                     <ul class="text-sm">
                         <li>Apartment</li>
@@ -358,7 +365,7 @@
                 </div>
                 <div class="col-span-1">
                     <h4 class="text-xs font-bold text-orange-500 uppercase mb-1 flex items-center mr-4">
-                    Services
+                        Services
                     </h4>
                     <ul class="text-sm">
                         <li>Apartment</li>
@@ -369,7 +376,7 @@
                 </div>
                 <div class="col-span-1">
                     <h4 class="text-xs font-bold text-orange-500 uppercase mb-1 flex items-center mr-4">
-                    Services
+                        Services
                     </h4>
                     <ul class="text-sm">
                         <li>Apartment</li>

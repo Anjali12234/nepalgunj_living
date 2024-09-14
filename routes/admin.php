@@ -25,4 +25,4 @@ Route::prefix('registerdUser')->group(function () {
 });
 
 
-Route::get('send-email',[MailController::class, 'sendEmail'])->name('send-email');
+// Route::get('send-email',[MailController::class, 'sendEmail'])->name('send-email');
