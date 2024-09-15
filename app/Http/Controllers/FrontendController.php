@@ -22,4 +22,9 @@ class FrontendController extends Controller
         return view('frontend.vehciles');
     }
 
+    public function test()
+    {
+        return view('test');
+    }
+
 }
