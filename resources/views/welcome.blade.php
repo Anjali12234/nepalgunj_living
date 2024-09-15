@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-frontend.navbar>
     </x-frontend.navbar>
-    <div>
+    <div class="font-mono">
         {{-- hero section --}}
         <div class=" mx-24 overflow-hidden">
             <div class="container mx-auto p-4">
@@ -1188,6 +1188,6 @@
             </div>
         </div>
 
-        <!-- ========== END FOOTER ========== -->
+    </div>  <!-- ========== END FOOTER ========== -->
 
 </x-guest-layout>
