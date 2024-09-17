@@ -2,32 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Doctor\StoreDoctorRequest;
+use App\Http\Requests\Doctor\UpdateDoctorRequest;
+use App\Models\Category;
+use App\Models\Doctor;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DoctorController extends Controller
 {
     public function create(SubCategory $subCategory)
     {
-        return view('frontend.user.propertyList.create', compact('subCategory'));
+        return view('frontend.user.doctorList.create',compact('subCategory'));
     }
 
-    public function store(StorePropertyListRequest $request, SubCategory $subCategory)
+    public function store(StoreDoctorRequest $request, SubCategory $subCategory)
     {
-        $propertyList = PropertyList::create(
+        Doctor::create(
             $request->validated() + [
                 'sub_category_id' => $subCategory->id,
                 'registered_user_id' => Auth::guard('registered-user')->user()->id,
+                'type' => "doctor",
             ]
         );
-        foreach ($request->validated(['files']) as $file) {
-            $propertyList->files()->create([
-                'file_name' => $file->getClientOriginalName(),
-                'file' => $file->store('propertyLists/' . Str::slug($request->input('title'), '_'), 'public'),
-                'size' => $file->getSize(),
-                'extension' => $file->getClientOriginalExtension()
-            ]);
-        }
+
         alert("form submitted");
         return back();
     }
@@ -36,42 +36,36 @@ class DoctorController extends Controller
     {
         $registeredUser = Auth::guard('registered-user')->user();
 
-        $categories = Category::with(['subCategories.propertyLists' => function ($query) use ($registeredUser) {
+        $categories = Category::with(['subCategories.doctors' => function ($query) use ($registeredUser) {
             $query->where('registered_user_id', $registeredUser->id);
         }])->get();
 
-        return view('frontend.user.propertyList.index', compact('categories'));
+        return view('frontend.user.doctorList.index', compact('categories'));
     }
 
-    public function edit(SubCategory $subCategory, PropertyList $propertyList)
+    public function edit(SubCategory $subCategory, Doctor $doctorList)
     {
-        return view('frontend.user.propertyList.edit', compact('subCategory', 'propertyList'));
+        return view('frontend.user.doctorList.edit', compact('subCategory', 'doctorList'));
     }
 
-    public function update(UpdatePropertyListRequest $request, PropertyList $propertyList)
+    public function update(UpdateDoctorRequest $request, Doctor $doctorList)
     {
-        if ($request->hasFile('files')) {
-            foreach ($request->file('files') as $file) {
-                $propertyList->files()->create([
-                    'file_name' => $file->getClientOriginalName(),
-                    'file' => $file->store('propertyLists/' . Str::slug($request->input('title'), '_'), 'public'),
-                    'size' => $file->getSize(),
-                    'extension' => $file->getClientOriginalExtension()
-                ]);
-            }
+        if ($request->hasFile('image') && $image= $doctorList->getRawOriginal('image')) {
+
+            $this->deleteFile($image);
         }
-        $propertyList->update($request->validated());
-        return redirect(route('user.property/propertyLists'));
+        $doctorList->update($request->validated());
+
+        alert("form updated");
+
+        return redirect(route('user.doctor/doctorLists'));
     }
 
 
-    public function destroy(PropertyList $propertyList)
+    public function destroy(SubCategory $subCategory, Doctor $doctorList)
     {
-        foreach ($propertyList->files as $file) {
-
-            $this->deleteFile($file->file);
-        }
-        $propertyList->delete();
+        $doctorList->delete();
+        Alert::success('Doctor deleted successfully');
         return back();
     }
 }

@@ -32,6 +32,7 @@ class PropertyList extends Model
         'kitchen_type',
         'deposit',
         'features',
+        'is_featured',
         'status',
     ];
 

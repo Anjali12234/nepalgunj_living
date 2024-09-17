@@ -15,11 +15,10 @@ class StoreDoctorRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'branch_id' => ['nullable'],
             'doctor_name' => ['required','string'],
             'department' => ['required','string'],
-            'description' => ['required','string'],
-            'n_m_c_no' => ['required','number'],
-            'is_rent' => ['required'],
+            'n_m_c_no' => ['required','numeric'],
             'qualification' => ['required','string'],
             'o_p_d_schedule' => ['required','string'],
             'details' => ['required','string'],
@@ -28,8 +27,8 @@ class StoreDoctorRequest extends FormRequest
             'map_url' => ['required','string'],
             'twitter_url' => ['required','string'],
             'facebook_url' => ['required','string'],
-            'whats_app_no' => ['required','number'],
-            'phone_number' => ['required','number'],
+            'whats_app_no' => ['required','numeric'],
+            'phone_number' => ['required','string'],
             'image' => ['required','image'],
 
         ];

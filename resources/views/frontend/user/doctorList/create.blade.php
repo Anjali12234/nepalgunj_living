@@ -1,5 +1,6 @@
-<x-guest-layout>
-
+{{-- <x-guest-layout> --}}
+    @extends('AdPage')
+    @section('main-container')
     <div class="sm:pl-20 sm:pr-30 ">
         <div class="mx-5  mt-14">
             <ol class="flex items-center whitespace-nowrap">
@@ -28,117 +29,63 @@
                 </li>
                 <li class="inline-flex items-center text-sm font-semibold text-gray-800 truncate dark:text-neutral-200"
                     aria-current="page">
-                    {{ $subCategory->title_en }}
+                    Doctor
                 </li>
             </ol>
         </div>
-        <div class="mt-6 mx-5">
+        <div class="mt-6 mx-5 mb-40">
             <h1 class="font-bold text-xl text-purple-950">Add the complete detail of your property</h1>
             @include('error')
 
-            <form class="mt-8" action="{{ route('user.property.store',$subCategory) }}" method="POST" enctype="multipart/form-data">
-               @csrf
+            <form class="mt-8" action="{{ route('user.doctorList.store',$subCategory) }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="block md:grid grid-cols-4 pr-16">
                     <div class="col-span-2 mr-6">
-                        <x-frontend.forms.select-type-field label="Is Rent" id="is_rent" name="is_rent" class="text-sm font-semibold"
-                            :options="['rent' => 'For Rent', 'sale' => 'For Sale']" />
 
-                            <x-frontend.forms.input-type-field
-                        label="Title"
-                        id="title"
-                        name="title"
-                        type="text"
-                        class="text-sm font-semibold"
-                        />
-                            <x-frontend.forms.input-type-field
-                        label="Rate"
-                        id="rate"
-                        name="rate"
-                        type="text"
-                        class="text-sm font-semibold"
-                        placeholder="Per Month"
-                        />
+                        <x-frontend.forms.input-type-field label="Doctor Name" id="doctor_name"
+                            name="doctor_name" type="text" class="text-sm font-semibold" />
+                        <x-frontend.forms.input-type-field label="Department" id="department"
+                            name="department" type="text" class="text-sm font-semibold"
+                             />
+                        <x-frontend.forms.input-type-field label="Contact No" id="phone_number"
+                            name="phone_number" type="text" class="text-sm font-semibold"
+                             />
+                        <x-frontend.forms.input-type-field label="NMC No" id="n_m_c_no" name="n_m_c_no"
+                            type="number" class="text-sm font-semibold"  />
+                        <x-frontend.forms.input-type-field label="Qualification" id="qualification"
+                            name="qualification" type="text" class="text-sm font-semibold"
+                             />
+                        <x-frontend.forms.input-type-field label="OPD Schedule" id="o_p_d_schedule"
+                            name="o_p_d_schedule" type="text" class="text-sm font-semibold"
+                             />
+                        <x-frontend.forms.input-type-field label="Clinic Address" id="clinic_address"
+                            name="clinic_address" type="text" class="text-sm font-semibold"
+                             />
 
-                        <x-frontend.forms.text-area-component
-                        label="Description"
-                        id="editor"
-                        name="description" class="text-sm font-semibold"/>
-
-                        <x-frontend.forms.text-area-component
-                        label="Location"
-                        id="location"
-                        name="location" class="text-sm font-semibold"/>
-
-                        <x-frontend.forms.input-type-field
-                        label="Bed Room"
-                        id="bed_room"
-                        name="bed_room"
-                        type="number"
-                        class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
-                        />
-
-                        <x-frontend.forms.input-type-field
-                        label="Bath Room"
-                        id="bathroom"
-                        name="bathroom"
-                        type="number"
-                        class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
-                        />
-
-
-
+                        <x-frontend.forms.text-area-component label="Details" id="editor" name="details"
+                            class="text-sm font-semibold" />
                     </div>
                     <div class="col-span-2">
 
-                        <x-frontend.forms.select-type-field label="Internet" id="internet" name="internet" class="text-sm font-semibold"
-                        :options="['include' => 'Include', 'exclude' => 'Exclude']" />
+                        <x-frontend.forms.input-type-field label="YouTub Link" id="youtube_link"
+                            name="youtube_link" type="text" class="text-sm font-semibold"
+                             />
 
-                        <x-frontend.forms.select-type-field label="Parking" id="parking" name="parking" class="text-sm font-semibold"
-                        :options="['include' => 'Include', 'exclude' => 'Exclude']" />
-
-
-                        <x-frontend.forms.input-type-field
-                        label="Square Feet"
-                        id="area"
-                        name="area"
-                        type="text"
-                        class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
-                        />
-
-                        <x-frontend.forms.input-type-field
-                        label="Kitchen Type"
-                        id="kitchen_type"
-                        name="kitchen_type"
-                        type="text"
-                        class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
-                        />
-                        <x-frontend.forms.input-type-field
-                        label="Deposit"
-                        id="deposit"
-                        name="deposit"
-                        type="number"
-                        class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
-                        />
+                        <x-frontend.forms.input-type-field label="Map Url" id="map_url" name="map_url"
+                            type="text" class="text-sm font-semibold"  />
+                        <x-frontend.forms.input-type-field label="Twitter Url" id="twitter_url"
+                            name="twitter_url" type="text" class="text-sm font-semibold"
+                             />
 
 
-                        <x-frontend.forms.text-area-component
-                        label="Features"
-                        id="features"
-                        name="features" class="text-sm font-semibold"/>
+                        <x-frontend.forms.input-type-field label="Facebook Url" id="facebook_url"
+                            name="facebook_url" type="text" class="text-sm font-semibold" />
+                        <x-frontend.forms.input-type-field label="Whats App" id="whats_app_no"
+                            name="whats_app_no" type="number" class="text-sm font-semibold" />
 
-                        <x-frontend.forms.file-component
-                        label="House Image Of All Side"
-                        id="files"
-                        name="files[]"
-                        type="file"
-                        class="text-sm font-semibold" multiple="multiple"
-                        {{-- placeholder="Per Month" --}}
-                        />
+                        <x-frontend.forms.file-component label="Image Of Doctor" id="image"
+                            name="image" type="file" class="text-sm font-semibold"
+                             />
                     </div>
                     <div class="col-span-4 flex justify-center mt-8">
                         <button type="submit"
@@ -147,9 +94,11 @@
                 </div>
 
             </form>
+
+
         </div>
 
     </div>
-
-
-</x-guest-layout>
+@endsection
+{{--
+</x-guest-layout> --}}

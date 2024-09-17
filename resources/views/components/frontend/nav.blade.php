@@ -3,9 +3,9 @@
 <header
 class='font-mono flex shadow-md pt-3 px-4 sm:pl-20 sm:pr-32 bg-white min-h-[70px] tracking-wide relative z-50'
 style="">
-<div class='flex flex-wrap items-center justify-between md:gap-5 w-full'>
+<div class='flex flex-wrap items-center justify-between md:gap-0 w-full'>
     <a href="javascript:void(0)">
-        <img src="{{ asset('assets/frontend/static/logo.png') }}" alt="logo" class="w-36 hidden lg:block" />
+        <img src="{{ asset('assets/frontend/static/logo.png') }}" alt="logo" class="w-36  hidden lg:block" />
     </a>
     <a href="javascript:void(0)">
         <img src="{{ asset('assets/frontend/static/logo.png') }}" alt="logo" class="w-24 block lg:hidden" />
@@ -84,8 +84,8 @@ style="">
     <div class='flex max-lg:ml-auto space-x-3 py-2'>
         <x-frontend.post-ad-component
             extraClasses="px-5 py-2.5 h-10 mt-2 rounded-lg hidden lg:flex text-white text-sm tracking-wider border border-current gap-3 mr-8"
-            title="Post Ad">
-        </x-frontend.post-ad-component>
+            title="Post Ad"/>
+
         <a href="#" class=" py-2  transition-all ease-in-out duration-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24"
                 fill="none" stroke="grey" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -96,8 +96,8 @@ style="">
         </a>
         <x-frontend.post-ad-component
             extraClasses="w-7 h-7 mt-3 inline-flex items-center justify-center rounded-full border-none lg:hidden"
-            title="">
-        </x-frontend.post-ad-component>
+            title=""/>
+
         <x-frontend.admin-component>
         </x-frontend.admin-component>
 

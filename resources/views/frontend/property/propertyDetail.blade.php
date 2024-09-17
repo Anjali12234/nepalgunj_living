@@ -7,8 +7,8 @@
                         Properties, For Rent, Residential, Villa Apartment
                     </p>
                     <div class="px-4 py-8 border border-dashed">
-                        <h1 class="text-2xl font-bold">BIG STUDIO AT NUIJA HILAL NO COMMISSION</h1>
-                        <p>Reference No: 70013269</p>
+                        <h1 class="text-2xl font-bold">{{ $propertyList->title }}</h1>
+                        <p>Reference No: {{ $propertyList->reference_no }}</p>
                         <p class="text-xs text-gray-400">Updated 7 hours ago</p>
                     </div>
 
@@ -17,13 +17,13 @@
                     <div class="max-w-sm mx-auto bg-white  overflow-hidden mt-4">
                         <div class="bg-cyan-700 text-white p-4 flex justify-between items-center">
                             <div>
-                                <p class="text-2xl font-bold">2,550</p>
-                                <p class="text-[10px]">QAR/Month</p>
+                                <p class="text-2xl font-bold">{{ $propertyList->rate }}</p>
+                                <p class="text-[10px]">Rs/Month</p>
                             </div>
-                            <div class="text-right">
+                            {{-- <div class="text-right">
                                 <p class="text-2xl font-bold">5000</p>
                                 <p class="text-sm">ر.ق/شهري</p>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="p-4 border-b">
                             <div class="flex justify-between text-gray-600">
@@ -31,12 +31,14 @@
                                 <p>COMMISSION:</p>
                             </div>
                             <div class="flex justify-between font-semibold">
-                                <p>1 Month</p>
+                                <p>{{ $propertyList->deposit }}</p>
                                 <p>None</p>
                             </div>
                         </div>
                         <div class="p-4 flex items-center">
-                            <div class="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded-full mr-3">
+                                <img src="{{ $propertyList?->registeredUser?->registeredUserDetail?->image }}" alt="">
+                            </div>
                             <p class="font-semibold">Trading A2</p>
                         </div>
                         <div class="p-4 space-y-2">

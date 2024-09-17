@@ -6,23 +6,31 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateDoctorRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
+
     public function rules(): array
     {
         return [
-            //
+            'branch_id' => ['nullable'],
+            'doctor_name' => ['required','string'],
+            'department' => ['required','string'],
+            'n_m_c_no' => ['required','numeric'],
+            'qualification' => ['required','string'],
+            'o_p_d_schedule' => ['required','string'],
+            'details' => ['required','string'],
+            'youtube_link' => ['required','string'],
+            'clinic_address' => ['required','string'],
+            'map_url' => ['required','string'],
+            'twitter_url' => ['required','string'],
+            'facebook_url' => ['required','string'],
+            'whats_app_no' => ['required','numeric'],
+            'phone_number' => ['required','string'],
+            'image' => ['nullable','image'],
+
         ];
     }
 }

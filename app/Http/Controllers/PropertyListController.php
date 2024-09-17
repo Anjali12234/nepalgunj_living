@@ -67,6 +67,8 @@ class PropertyListController extends Controller
             }
         }
         $propertyList->update($request->validated());
+        alert("form updated");
+
         return redirect(route('user.property/propertyLists'));
     }
 

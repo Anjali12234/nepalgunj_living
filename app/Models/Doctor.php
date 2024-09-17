@@ -33,6 +33,7 @@ class Doctor extends Model
         'map_url',
         'twitter_url',
         'facebook_url',
+        'type',
         'whats_app_no',
         'phone_number',
         'image'
@@ -52,7 +53,7 @@ class Doctor extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'doctor_name'
             ]
         ];
     }

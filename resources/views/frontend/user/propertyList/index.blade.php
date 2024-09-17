@@ -89,16 +89,20 @@
                                                                 <i class="ti ti-trash text-2xl font-bold text-red-700"></i>
                                                             </a> --}}
 
-                                                            <form action="{{ route('user.propertyList.destroy',$propertyList) }}" method="post" style="display: inline"
+                                                            <form
+                                                                action="{{ route('user.propertyList.destroy', $propertyList) }}"
+                                                                method="post" style="display: inline" {{-- <form action="{{ route('user.propertyList.destroy', [$subCategory->slug, $propertyList->id]) }}" --}}
+                                                                method="post" style="display: inline">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit"
+                                                                    class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
+                                                                    onclick="return confirm('Are You sure want to delete')">
+                                                                    <i
+                                                                        class="ti ti-trash text-2xl font-bold text-red-700"></i>
+                                                                </button>
 
-                                                            {{-- <form action="{{ route('user.propertyList.destroy', [$subCategory->slug, $propertyList->id]) }}" --}}
-                                                            method="post" style="display: inline">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit" class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
-                                                                onclick="return confirm('Are You sure want to delete')"> <i class="ti ti-trash text-2xl font-bold text-red-700"></i> </button>
-
-                                                        </form>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -107,10 +111,11 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     @endif
                 @endforeach
+            @endforeach
         </div>
-        @endforeach
     </div>
     <div class="min-h-72">
         <h2>asdfasdf</h2>

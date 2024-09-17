@@ -4,7 +4,7 @@ namespace App\Enums;
 
 enum CategoryTypeEnum: string
 {
-    case PROPERTIES = 'property';
+    case PROPERTIES = 'properties';
     case HEALTH_CARE = 'health_care';
     case EDUCATION = 'education';
     case HOSPITALITY = 'hospitality';
@@ -22,7 +22,7 @@ enum CategoryTypeEnum: string
     public function getlabel(self $value)
     {
         return match ($value) {
-            self::PROPERTIES => 'property',
+            self::PROPERTIES => 'properties',
             self::HEALTH_CARE => 'health_care',
             self::EDUCATION => 'education',
             self::HOSPITALITY => 'hospitality',

@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('sub_category_id')->nullable()->constrained()->cascadeOnDelete();
             $table->foreignId('registered_user_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('branch_id')->nullable()->constrained()->cascadeOnDelete();
             $table->string('doctor_name');
             $table->string('reference_no')->nullable();
             $table->string('department');
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->string('whats_app_no');
             $table->string('phone_number');
             $table->string('image');
+            $table->string('type');
             $table->boolean('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
