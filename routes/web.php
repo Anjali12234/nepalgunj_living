@@ -15,6 +15,8 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('propertyList/{propertyList:slug}', 'propertyDetails')->name('propertyDetails');
     Route::get('about', 'about')->name('about');
     Route::get('vehicles', 'vehicles')->name('vehicles');
+    Route::get('healthCare','healthcareIndex')->name('healthcareIndex');
+    Route::get('doctorlist','listPage')->name('healthcare.listPage');
 
 });
 

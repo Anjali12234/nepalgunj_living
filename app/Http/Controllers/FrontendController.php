@@ -89,4 +89,12 @@ class FrontendController extends Controller
 
         view()->share('sharedSetting', $setting);
     }
+    public function healthcareIndex()
+    {
+        return view('frontend.healthcare.index');
+    }
+    public function listPage()
+    {
+        return view('frontend.healthcare.detailPage');
+    }
 }
