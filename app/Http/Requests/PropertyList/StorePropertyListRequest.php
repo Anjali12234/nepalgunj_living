@@ -37,7 +37,7 @@ class StorePropertyListRequest extends FormRequest
                 Rule::unique('property_lists', 'slug')
             ],
             'files' => ['required', 'array'],
-            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
+            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif,webp'],
         ];
     }
 }

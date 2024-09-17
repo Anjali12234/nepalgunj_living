@@ -12,11 +12,13 @@ trait HasReferenceNumber
         });
     }
 
+
     public function generateReferenceNumber()
     {
         $title = strtoupper(Str::substr($this->title, 0, 3));
-        $date = now()->format('YmdHis');
-        return $title . '-' . $date;
+        $date = now()->format('ym');
+        $referenceNumber = $title . $date;
+        return Str::limit($referenceNumber, 10, '');
     }
 
 

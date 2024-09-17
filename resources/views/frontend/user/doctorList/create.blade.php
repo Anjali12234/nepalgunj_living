@@ -1,5 +1,6 @@
-<x-guest-layout>
-
+{{-- <x-guest-layout> --}}
+    @extends('AdPage')
+    @section('main-container')
     <div class="sm:pl-20 sm:pr-30 ">
         <div class="mx-5  mt-14">
             <ol class="flex items-center whitespace-nowrap">
@@ -45,21 +46,21 @@
                             name="doctor_name" type="text" class="text-sm font-semibold" />
                         <x-frontend.forms.input-type-field label="Department" id="department"
                             name="department" type="text" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
                         <x-frontend.forms.input-type-field label="Contact No" id="phone_number"
                             name="phone_number" type="text" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
                         <x-frontend.forms.input-type-field label="NMC No" id="n_m_c_no" name="n_m_c_no"
-                            type="number" class="text-sm font-semibold" {{-- placeholder="Per Month" --}} />
+                            type="number" class="text-sm font-semibold"  />
                         <x-frontend.forms.input-type-field label="Qualification" id="qualification"
                             name="qualification" type="text" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
                         <x-frontend.forms.input-type-field label="OPD Schedule" id="o_p_d_schedule"
                             name="o_p_d_schedule" type="text" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
                         <x-frontend.forms.input-type-field label="Clinic Address" id="clinic_address"
                             name="clinic_address" type="text" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
 
                         <x-frontend.forms.text-area-component label="Details" id="editor" name="details"
                             class="text-sm font-semibold" />
@@ -68,13 +69,13 @@
 
                         <x-frontend.forms.input-type-field label="YouTub Link" id="youtube_link"
                             name="youtube_link" type="text" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
 
                         <x-frontend.forms.input-type-field label="Map Url" id="map_url" name="map_url"
-                            type="text" class="text-sm font-semibold" {{-- placeholder="Per Month" --}} />
+                            type="text" class="text-sm font-semibold"  />
                         <x-frontend.forms.input-type-field label="Twitter Url" id="twitter_url"
                             name="twitter_url" type="text" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
 
 
                         <x-frontend.forms.input-type-field label="Facebook Url" id="facebook_url"
@@ -84,7 +85,7 @@
 
                         <x-frontend.forms.file-component label="Image Of Doctor" id="image"
                             name="image" type="file" class="text-sm font-semibold"
-                            {{-- placeholder="Per Month" --}} />
+                             />
                     </div>
                     <div class="col-span-4 flex justify-center mt-8">
                         <button type="submit"
@@ -98,6 +99,6 @@
         </div>
 
     </div>
-
-
-</x-guest-layout>
+@endsection
+{{--
+</x-guest-layout> --}}

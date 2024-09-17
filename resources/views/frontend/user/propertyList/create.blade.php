@@ -1,5 +1,6 @@
-<x-guest-layout>
-
+{{-- <x-guest-layout> --}}
+    @extends('AdPage')
+    @section('main-container')
     <div class="sm:pl-20 sm:pr-30 ">
         <div class="mx-5  mt-14">
             <ol class="flex items-center whitespace-nowrap">
@@ -40,8 +41,9 @@
                @csrf
                 <div class="block md:grid grid-cols-4 pr-16">
                     <div class="col-span-2 mr-6">
-                        <x-frontend.forms.select-type-field label="Is Rent" id="is_rent" name="is_rent" class="text-sm font-semibold"
-                            :options="['rent' => 'For Rent', 'sale' => 'For Sale']" />
+                        <x-frontend.forms.select-type-field label="Is Rent"
+                        id="is_rent" name="is_rent" class="text-sm font-semibold"
+                            :options="['1' => 'For Rent', '0' => 'For Sale']" />
 
                             <x-frontend.forms.input-type-field
                         label="Title"
@@ -59,15 +61,9 @@
                         placeholder="Per Month"
                         />
 
-                        <x-frontend.forms.text-area-component
-                        label="Description"
-                        id="editor"
-                        name="description" class="text-sm font-semibold"/>
 
-                        <x-frontend.forms.text-area-component
-                        label="Location"
-                        id="location"
-                        name="location" class="text-sm font-semibold"/>
+
+
 
                         <x-frontend.forms.input-type-field
                         label="Bed Room"
@@ -75,7 +71,7 @@
                         name="bed_room"
                         type="number"
                         class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
+
                         />
 
                         <x-frontend.forms.input-type-field
@@ -84,7 +80,7 @@
                         name="bathroom"
                         type="number"
                         class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
+
                         />
 
 
@@ -105,7 +101,7 @@
                         name="area"
                         type="text"
                         class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
+
                         />
 
                         <x-frontend.forms.input-type-field
@@ -114,7 +110,7 @@
                         name="kitchen_type"
                         type="text"
                         class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
+
                         />
                         <x-frontend.forms.input-type-field
                         label="Deposit"
@@ -122,14 +118,10 @@
                         name="deposit"
                         type="number"
                         class="text-sm font-semibold"
-                        {{-- placeholder="Per Month" --}}
+
                         />
 
 
-                        <x-frontend.forms.text-area-component
-                        label="Features"
-                        id="features"
-                        name="features" class="text-sm font-semibold"/>
 
                         <x-frontend.forms.file-component
                         label="House Image Of All Side"
@@ -137,9 +129,27 @@
                         name="files[]"
                         type="file"
                         class="text-sm font-semibold" multiple="multiple"
-                        {{-- placeholder="Per Month" --}}
+
                         />
                     </div>
+                    <div class="col-span-4">
+                        <x-frontend.forms.text-area-component
+                        label="Description"
+                        id="editor"
+                        name="description" class="text-sm font-semibold"/>
+
+                        <x-frontend.forms.text-area-component
+                        label="Features"
+                        id="features"
+                        name="features" class="text-sm font-semibold"/>
+
+                        <x-frontend.forms.text-area-component
+                        label="Location"
+                        id="location"
+                        name="location" class="text-sm font-semibold"/>
+                    </div>
+
+
                     <div class="col-span-4 flex justify-center mt-8">
                         <button type="submit"
                             class="px-6 pt-1 pb-2 bg-[#333] hover:bg-[#444] text-sm font-semibold text-white">Submit</button>
@@ -151,5 +161,5 @@
 
     </div>
 
-
-</x-guest-layout>
+@endsection
+{{-- </x-guest-layout> --}}
