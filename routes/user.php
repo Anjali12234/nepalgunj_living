@@ -3,6 +3,8 @@
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\HospitalController;
+use App\Http\Controllers\MedicalController;
+use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\PostAdController;
 use App\Http\Controllers\PropertyListController;
 use App\Http\Controllers\RegisteredUserDetailController;
@@ -38,20 +40,36 @@ Route::group(['prefix' => '{subCategory:slug}'], function () {
     Route::resource('doctorList', DoctorController::class);
 });
 Route::get('doctorLists', [DoctorController::class, 'index'])->name('doctor/doctorLists');
-
 Route::put('doctorLists/{doctorList}', [DoctorController::class, 'update'])
     ->name('doctorLists.update');
+
 
 Route::group(['prefix' => '{subCategory:slug}'], function () {
     Route::resource('hospitalList', HospitalController::class);
 });
 Route::get('hospitalLists', [HospitalController::class, 'index'])->name('hospital/hospitalLists');
-
 Route::put('hospitalLists/{hospitalList}', [HospitalController::class, 'update'])
     ->name('hospitalLists.update');
 
+
+Route::group(['prefix' => '{subCategory:slug}'], function () {
+    Route::resource('medicalList', MedicalController::class);
+});
+Route::get('medicalLists', [MedicalController::class, 'index'])->name('medical/medicalLists');
+Route::put('medicalLists/{medicalList}', [MedicalController::class, 'update'])
+    ->name('medicalLists.update');
+
+
+Route::group(['prefix' => '{subCategory:slug}'], function () {
+    Route::resource('pharmacyList', PharmacyController::class);
+});
+Route::get('pharmacyLists', [PharmacyController::class, 'index'])->name('pharmacy/pharmacyLists');
+Route::put('pharmacyLists/{pharmacyList}', [PharmacyController::class, 'update'])
+    ->name('pharmacyLists.update');
+
+
 Route::get('healthCare', [DoctorController::class, 'index'])->name('halthCare');
-Route::post('destroyImage/{registeredUser}/{registeredUserDetail}', [RegisteredUserDetailController::class, 'destroyImage'])->name('destroyImage');
+
 Route::prefix('file')->as('file.')->controller(FileController::class)->group(function () {
     Route::delete('{file}/delete', 'destroy')->name('destroy');
 });

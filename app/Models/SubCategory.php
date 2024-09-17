@@ -46,6 +46,14 @@ class SubCategory extends Model
     {
         return $this->hasMany(Hospital::class);
     }
+    public function medicals()
+    {
+        return $this->hasMany(Medical::class);
+    }
+    public function pharmacies()
+    {
+        return $this->hasMany(Pharmacy::class);
+    }
 
     protected function image(): Attribute
     {

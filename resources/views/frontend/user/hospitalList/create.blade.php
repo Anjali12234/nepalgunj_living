@@ -152,7 +152,7 @@
                         name="contact_number" type="text" class="text-sm font-semibold"
                         {{-- placeholder="Per Month" --}} />
 
-                        <x-frontend.forms.text-area-component label="OPD Schedules" id="editor" name="o_p_d_schedule"
+                        <x-frontend.forms.text-area-component label="OPD Schedules" id="o_p_d_schedule" name="o_p_d_schedule"
                         class="text-sm font-semibold" />
 
                     <x-frontend.forms.input-type-field label="Hospital Address" id="hospital_address"

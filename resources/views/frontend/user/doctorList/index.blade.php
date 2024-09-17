@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="content px-5  md:px-7 col-span-3 mt-8 md:mt-0">
-        <h1 class="font-semibold text-3xl">Property List</h1>
+        <h1 class="font-semibold text-3xl">Health Care List</h1>
 
         {{-- Tab Navigation --}}
         <div class="border-b border-gray-200 dark:border-neutral-700">
@@ -34,7 +34,7 @@
                 </button>
                 <button type="button"
                     class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500"
-                    id="tabs-with-icons-item-3" aria-selected="false" data-hs-tab="#tabs-with-icons-2"
+                    id="tabs-with-icons-item-3" aria-selected="false" data-hs-tab="#tabs-with-icons-3"
                     aria-controls="tabs-with-icons-3" role="tab">
                     <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -44,6 +44,19 @@
                         <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
                     </svg>
                     Medical
+                </button>
+                <button type="button"
+                    class="hs-tab-active:font-semibold hs-tab-active:border-blue-600 hs-tab-active:text-blue-600 py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500"
+                    id="tabs-with-icons-item-4" aria-selected="false" data-hs-tab="#tabs-with-icons-4"
+                    aria-controls="tabs-with-icons-3" role="tab">
+                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <circle cx="12" cy="10" r="3"></circle>
+                        <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+                    </svg>
+                  Pharmacy
                 </button>
             </nav>
         </div>
@@ -98,7 +111,7 @@
                                                                     href="{{ route('user.doctorList.edit', [$subCategory, $doctorList]) }}"
                                                                     class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
                                                                     <i
-                                                                        class="ti ti-edit text-2xl font-bold text-purple-700"></i>
+                                                                        class="ti ti-edit text-2xl font-bold text-neutral-800"></i>
                                                                 </a>
                                                                 <form
                                                                     action="{{ route('user.doctorList.destroy', [$subCategory, $doctorList]) }}"
@@ -137,7 +150,7 @@
                                     <div class="-m-1.5 overflow-x-auto">
                                         <div class="p-1.5 min-w-full inline-block align-middle">
                                             <div class="overflow-hidden">
-                                                <x-frontend.forms.table-component :headers="['Reference No', 'Hospital Name', 'Phone Number', 'Action']" :data="$subCategory->hospitals">
+                                                <x-frontend.forms.table-component :headers="['Reference No', 'Hospital Name', 'Phone Number','Address', 'Action']" :data="$subCategory->hospitals">
                                                     @foreach ($subCategory->hospitals as $hospitalList)
                                                         <tr>
                                                             <td
@@ -153,12 +166,16 @@
                                                                 {{ $hospitalList->contact_number }}
                                                             </td>
                                                             <td
+                                                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                                                {{ $hospitalList->hospital_address }}
+                                                            </td>
+                                                            <td
                                                                 class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium ">
                                                                 <a type="button"
                                                                     href="{{ route('user.hospitalList.edit', [$subCategory, $hospitalList]) }}"
                                                                     class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
                                                                     <i
-                                                                        class="ti ti-edit text-2xl font-bold text-purple-700"></i>
+                                                                        class="ti ti-edit text-2xl font-bold text-neutral-800"></i>
                                                                 </a>
                                                                 <form
                                                                     action="{{ route('user.hospitalList.destroy', [$subCategory, $hospitalList]) }}"
@@ -180,8 +197,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            @else
-                                <p>No Data found !!</p>
+
                             @endif
                         @endif
                     @endforeach
@@ -189,8 +205,132 @@
             </div>
             <div id="tabs-with-icons-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-3">
 
+                @foreach ($categories as $category)
+                @foreach ($category->subCategories as $subCategory)
+                    {{-- Show hospital data only if category type is health care --}}
+                    @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::HEALTH_CARE)
+                        @if ($subCategory->medicals->isNotEmpty())
+                            <div class="flex flex-col">
+                                <div class="-m-1.5 overflow-x-auto">
+                                    <div class="p-1.5 min-w-full inline-block align-middle">
+                                        <div class="overflow-hidden">
+                                            <x-frontend.forms.table-component :headers="['Reference No', 'Medical Name', 'Phone Number','Address', 'Action']" :data="$subCategory->medicals">
+                                                @foreach ($subCategory->medicals as $medicalList)
+                                                    <tr>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                                            {{ $medicalList->reference_no }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                                            {{ $medicalList->medical_name }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                                            {{ $medicalList->contact_number }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                                            {{ $medicalList->medical_address }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium ">
+                                                            <a type="button"
+                                                                href="{{ route('user.medicalList.edit', [$subCategory, $medicalList]) }}"
+                                                                class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
+                                                                <i
+                                                                    class="ti ti-edit text-2xl font-bold text-neutral-800"></i>
+                                                            </a>
+                                                            <form
+                                                                action="{{ route('user.medicalList.destroy', [$subCategory, $medicalList]) }}"
+                                                                method="post" style="display: inline">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit"
+                                                                    class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
+                                                                    onclick="return confirm('Are You sure want to delete?')">
+                                                                    <i
+                                                                        class="ti ti-trash text-2xl font-bold text-red-700"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </x-frontend.forms.table-component>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <p>hello its medical tab</p>
+                        @endif
+                    @endif
+                @endforeach
+            @endforeach
+
+            </div>
+            <div id="tabs-with-icons-4" class="hidden" role="tabpanel" aria-labelledby="tabs-with-icons-item-4">
+
+                @foreach ($categories as $category)
+                @foreach ($category->subCategories as $subCategory)
+                    {{-- Show hospital data only if category type is health care --}}
+                    @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::HEALTH_CARE)
+                        @if ($subCategory->pharmacies->isNotEmpty())
+                            <div class="flex flex-col">
+                                <div class="-m-1.5 overflow-x-auto">
+                                    <div class="p-1.5 min-w-full inline-block align-middle">
+                                        <div class="overflow-hidden">
+                                            <x-frontend.forms.table-component :headers="['Reference No', 'Pharmacy Name', 'Phone Number','Address', 'Action']" :data="$subCategory->pharmacies">
+                                                @foreach ($subCategory->pharmacies as $pharmacyList)
+                                                    <tr>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                                            {{ $pharmacyList->reference_no }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                                            {{ $pharmacyList->pharmacy_name }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                                            {{ $pharmacyList->contact_number }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-neutral-200">
+                                                            {{ $pharmacyList->pharmacy_address }}
+                                                        </td>
+                                                        <td
+                                                            class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium ">
+                                                            <a type="button"
+                                                                href="{{ route('user.pharmacyList.edit', [$subCategory, $pharmacyList]) }}"
+                                                                class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
+                                                                <i
+                                                                    class="ti ti-edit text-2xl font-bold text-neutral-800"></i>
+                                                            </a>
+                                                            <form
+                                                                action="{{ route('user.pharmacyList.destroy', [$subCategory, $pharmacyList]) }}"
+                                                                method="post" style="display: inline">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit"
+                                                                    class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400"
+                                                                    onclick="return confirm('Are You sure want to delete?')">
+                                                                    <i
+                                                                        class="ti ti-trash text-2xl font-bold text-red-700"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </x-frontend.forms.table-component>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @endif
+                    @endif
+                @endforeach
+            @endforeach
 
             </div>
 

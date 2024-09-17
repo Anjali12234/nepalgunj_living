@@ -1,5 +1,6 @@
 @extends('AdPage')
 @section('main-container')
+
     <div class="sm:pl-20 sm:pr-30 ">
         <div class="mx-5  mt-14">
             <ol class="flex items-center whitespace-nowrap">
@@ -28,56 +29,56 @@
                 </li>
                 <li class="inline-flex items-center text-sm font-semibold text-gray-800 truncate dark:text-neutral-200"
                     aria-current="page">
-                    Hospital
+                    Medical
                 </li>
             </ol>
         </div>
         <div class="mt-6 mx-5 mb-40">
-            <h1 class="font-bold text-xl text-purple-950">Add the complete detail of your property</h1>
-            @include('error')
-            <form class="mt-8" action="{{ route('user.hospitalLists.update',$hospitalList) }}" method="POST"
+            <h1 class="font-bold text-xl text-purple-950">Edit Detail of your medcal</h1>
+            {{-- @include('error') --}}
+            <form class="mt-8" action="{{ route('user.medicalLists.update',$medicalList) }}" method="POST"
                 enctype="multipart/form-data">
                 @method('put')
                 @csrf
                 <div class="block md:grid grid-cols-4 pr-16">
                     <div class="col-span-2 mr-6">
 
-                        <x-frontend.forms.input-type-field :value="old('hospital_name', $hospitalList->hospital_name)" label="Hospital Name" id="hospital_name"
-                            name="hospital_name" type="text" class="text-sm font-semibold" />
+                        <x-frontend.forms.input-type-field :value="old('medical_name', $medicalList->medical_name)" label="Medical Name" id="medical_name"
+                            name="medical_name" type="text" class="text-sm font-semibold" />
 
-                        <x-frontend.forms.input-type-field :value="old('contact_number', $hospitalList->contact_number)" label="Contact No" id="contact_number"
+                        <x-frontend.forms.input-type-field :value="old('contact_number', $medicalList->contact_number)" label="Contact No" id="contact_number"
                             name="contact_number" type="text" class="text-sm font-semibold"
                             {{-- placeholder="Per Month" --}} />
 
 
-                        <x-frontend.forms.input-type-field :value="old('o_p_d_schedule', $hospitalList->o_p_d_schedule)" label="OPD Schedule" id="o_p_d_schedule"
-                            name="o_p_d_schedule" type="text" class="text-sm font-semibold"
+                        <x-frontend.forms.input-type-field :value="old('opening_hours', $medicalList->opening_hours)" label="Opening Hours" id="opening_hours"
+                            name="opening_hours" type="text" class="text-sm font-semibold"
                             {{-- placeholder="Per Month" --}} />
-                        <x-frontend.forms.input-type-field :value="old('hospital_address', $hospitalList->hospital_address)" label="Hospital Address" id="hospital_address"
-                            name="hospital_address" type="text" class="text-sm font-semibold"
+                        <x-frontend.forms.input-type-field :value="old('medical_address', $medicalList->medical_address)" label="Medical Address" id="medical_address"
+                            name="medical_address" type="text" class="text-sm font-semibold"
                             {{-- placeholder="Per Month" --}} />
 
-                        <x-frontend.forms.text-area-component :value="old('details', $hospitalList->details)" label="Details" id="editor" name="details"
+                        <x-frontend.forms.text-area-component :value="old('details', $medicalList->details)" label="Details" id="editor" name="details"
                             class="text-sm font-semibold" />
                     </div>
                     <div class="col-span-2">
 
-                        <x-frontend.forms.input-type-field :value="old('youtube_link', $hospitalList->youtube_link)" label="YouTub Link" id="youtube_link"
+                        <x-frontend.forms.input-type-field :value="old('youtube_link', $medicalList->youtube_link)" label="YouTub Link" id="youtube_link"
                             name="youtube_link" type="text" class="text-sm font-semibold"
                             {{-- placeholder="Per Month" --}} />
 
-                        <x-frontend.forms.input-type-field :value="old('twitter_url', $hospitalList->twitter_url)" label="Map Url" id="map_url" name="map_url"
+                        <x-frontend.forms.input-type-field :value="old('twitter_url', $medicalList->twitter_url)" label="Map Url" id="map_url" name="map_url"
                             type="text" class="text-sm font-semibold" {{-- placeholder="Per Month" --}} />
-                        <x-frontend.forms.input-type-field :value="old('twitter_url', $hospitalList->twitter_url)" label="Twitter Url" id="twitter_url"
+                        <x-frontend.forms.input-type-field :value="old('twitter_url', $medicalList->twitter_url)" label="Twitter Url" id="twitter_url"
                             name="twitter_url" type="text" class="text-sm font-semibold"
                             {{-- placeholder="Per Month" --}} />
 
 
-                        <x-frontend.forms.input-type-field :value="old('facebook_url', $hospitalList->facebook_url)" label="Facebook Url" id="facebook_url"
+                        <x-frontend.forms.input-type-field :value="old('facebook_url', $medicalList->facebook_url)" label="Facebook Url" id="facebook_url"
                             name="facebook_url" type="text" class="text-sm font-semibold" />
 
 
-                        <x-frontend.forms.file-component label="Hospital Image Of All Side" id="files"
+                        <x-frontend.forms.file-component label="Medical Image Of All Side" id="files"
                         name="files[]" type="file" class="text-sm font-semibold" multiple="multiple"
                         {{-- placeholder="Per Month" --}} />
 
@@ -92,7 +93,7 @@
             </form>
 
         </div>
-        @foreach ($hospitalList->files as $file)
+        @foreach ($medicalList->files as $file)
         <div class="flex items-center whitespace-nowrap mt-16">
             <div class="flex p-9">
                 <img src="{{ $file->file_url }}" height="200" width="200" alt="">
@@ -102,7 +103,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger"
                         onclick="return confirm('Are you sure you want to delete?')">
-                        <i class="ti ti-xbox-x text-4xl font-bold"></i>
+                        <i class="ti ti-xbox-x text-4xl font-semibold"></i>
                     </button>
                 </form>
             </div>

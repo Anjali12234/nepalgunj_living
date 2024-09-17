@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Hospital extends Model
+class Medical extends Model
 {
     use HasFactory, SoftDeletes, Sluggable;
     use HasReferenceNumber;
@@ -16,14 +16,14 @@ class Hospital extends Model
     protected $fillable = [
         'sub_category_id',
         'registered_user_id',
-        'hospital_name',
+        'medical_name',
         'reference_no',
         'slug',
         'position',
-        'o_p_d_schedule',
+        'opening_hours',
         'details',
         'youtube_link',
-        'hospital_address',
+        'medical_address',
         'map_url',
         'twitter_url',
         'facebook_url',
@@ -42,16 +42,12 @@ class Hospital extends Model
     {
         return $this->belongsTo(RegisteredUser::class);
     }
-    public function branch()
-    {
-        return $this->belongsTo(Branch::class);
-    }
 
     public function sluggable(): array
     {
         return [
             'slug' => [
-                'source' => 'hospital_name'
+                'source' => 'medical_name'
             ]
         ];
     }
@@ -60,8 +56,8 @@ class Hospital extends Model
     {
         parent::boot();
 
-        static::creating(function ($hospital) {
-            $hospital->position = static::max('position') + 1;
+        static::creating(function ($medical) {
+            $medical->position = static::max('position') + 1;
         });
     }
 
@@ -73,7 +69,7 @@ class Hospital extends Model
     public function generateReferenceNumber()
     {
         $randomNumber = rand(1000, 9999);
-        return 'HOS' . $randomNumber . '-' . now()->format('Ymd');
+        return 'Med' . $randomNumber ;
     }
 
 }
