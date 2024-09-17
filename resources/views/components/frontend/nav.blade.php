@@ -1,7 +1,7 @@
 @include('sweetalert::alert')
 
 <header
-class='flex shadow-md pt-3 px-4 sm:pl-20 sm:pr-32 bg-white font-[sans-serif] min-h-[70px] tracking-wide relative z-50'
+class='font-mono flex shadow-md pt-3 px-4 sm:pl-20 sm:pr-32 bg-white min-h-[70px] tracking-wide relative z-50'
 style="">
 <div class='flex flex-wrap items-center justify-between md:gap-5 w-full'>
     <a href="javascript:void(0)">
@@ -39,8 +39,8 @@ style="">
             <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href="{{ route('vehicles') }}"
                     class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Vehicles</a>
             </li>
-            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
-                    class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Classified</a>
+            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='{{ route('healthcareIndex') }}'
+                    class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Health Care</a>
             </li>
             <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
                     class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Services</a>

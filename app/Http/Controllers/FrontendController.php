@@ -25,4 +25,12 @@ class FrontendController extends Controller
     {
         return view('frontend.property.propertyDetail');
     }
+    public function healthcareIndex()
+    {
+        return view('frontend.healthcare.index');
+    }
+    public function listPage()
+    {
+        return view('frontend.healthcare.detailPage');
+    }
 }
