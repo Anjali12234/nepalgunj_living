@@ -75,5 +75,10 @@ class Doctor extends Model
         );
     }
 
+    public function generateReferenceNumber()
+    {
+        $randomNumber = rand(1000, 9999);
+        return 'DOC' . $randomNumber ;
+    }
 
 }

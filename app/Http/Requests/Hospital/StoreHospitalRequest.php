@@ -25,7 +25,7 @@ class StoreHospitalRequest extends FormRequest
             'facebook_url' => ['required', 'string'],
             'contact_number' => ['required', 'string'],
             'files' => ['required', 'array'],
-            'files.*' => ['mimes:png,jpg,jpeg,pdf,jfif'],
+            'files.*' => ['mimes:png,jpg,jpeg,jfif'],
 
         ];
     }

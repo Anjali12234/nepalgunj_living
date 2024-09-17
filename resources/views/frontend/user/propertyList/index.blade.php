@@ -80,14 +80,10 @@
                                                                 href="{{ route('user.propertyLists.edit', [$subCategory->slug, $propertyList]) }}"
                                                                 class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
                                                                 <i
-                                                                    class="ti ti-edit text-2xl font-bold text-purple-700"></i>
+                                                                    class="ti ti-edit text-2xl font-bold text-neutral-800"></i>
 
                                                             </a>
-                                                            {{-- <a type="button"
-                                                                href="{{ route('user.propertyLists.edit', [$subCategory->slug, $propertyList->id]) }}"
-                                                                class="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 focus:outline-none focus:text-blue-800 dark:text-blue-500 dark:hover:text-blue-400">
-                                                                <i class="ti ti-trash text-2xl font-bold text-red-700"></i>
-                                                            </a> --}}
+
 
                                                             <form
                                                                 action="{{ route('user.propertyList.destroy', $propertyList) }}"
@@ -118,6 +114,6 @@
         </div>
     </div>
     <div class="min-h-72">
-        <h2>asdfasdf</h2>
+        
     </div>
 @endsection

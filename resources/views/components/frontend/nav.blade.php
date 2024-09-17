@@ -4,10 +4,10 @@
 class='font-mono flex shadow-md pt-3 px-4 sm:pl-20 sm:pr-32 bg-white min-h-[70px] tracking-wide relative z-50'
 style="">
 <div class='flex flex-wrap items-center justify-between md:gap-0 w-full'>
-    <a href="javascript:void(0)">
+    <a href="{{ route('home') }}">
         <img src="{{ asset('assets/frontend/static/logo.png') }}" alt="logo" class="w-36  hidden lg:block" />
     </a>
-    <a href="javascript:void(0)">
+    <a href="{{ route('home') }}">
         <img src="{{ asset('assets/frontend/static/logo.png') }}" alt="logo" class="w-24 block lg:hidden" />
     </a>
 

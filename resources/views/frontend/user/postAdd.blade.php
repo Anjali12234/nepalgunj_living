@@ -48,9 +48,14 @@
                                                     Hospital
                                                 </p>
                                             </a>
-                                            <a href="{{ route('user.doctorList.create', $category->subCategories->first()) }}">
+                                            <a href="{{ route('user.medicalList.create', $category->subCategories->first()) }}">
                                                 <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
                                                     Medicals
+                                                </p>
+                                            </a>
+                                            <a href="{{ route('user.pharmacyList.create', $category->subCategories->first()) }}">
+                                                <p class="block font-sans text-base font-light leading-relaxed text-inherit text-blue-gray-500">
+                                                    Pharmacy
                                                 </p>
                                             </a>
                                         @endif

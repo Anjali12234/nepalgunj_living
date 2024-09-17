@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Hospital;
+namespace App\Http\Requests\Pharmacy;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateHospitalRequest extends FormRequest
+class UpdatePharmacyRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -15,11 +15,11 @@ class UpdateHospitalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'hospital_name' => ['required', 'string'],
-            'o_p_d_schedule' => ['required', 'string'],
+            'pharmacy_name' => ['required', 'string'],
+            'opening_hours' => ['required', 'string'],
             'details' => ['required', 'string'],
             'youtube_link' => ['required', 'string'],
-            'hospital_address' => ['required', 'string'],
+            'pharmacy_address' => ['required', 'string'],
             'map_url' => ['required', 'string'],
             'twitter_url' => ['required', 'string'],
             'facebook_url' => ['required', 'string'],
