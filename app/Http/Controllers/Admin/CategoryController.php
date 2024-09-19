@@ -10,7 +10,6 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class CategoryController extends Controller
 {
-
     public function index()
     {
         $categories = Category::paginate(10);

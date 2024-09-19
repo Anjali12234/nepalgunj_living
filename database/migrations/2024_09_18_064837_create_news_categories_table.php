@@ -6,20 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
-        Schema::create('sub_categories', function (Blueprint $table) {
+        Schema::create('news_categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->nullable()->constrained()->cascadeOnDelete();
-            $table->string('title_en');
-            $table->string('title_ne');
+            $table->string('title');
             $table->string('slug');
             $table->integer('position')->nullable();
-            $table->string('image')->nullable();
-            $table->string('category_type');
             $table->boolean('status')->default(0);
             $table->softDeletes();
             $table->timestamps();
@@ -29,6 +23,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('sub_categories');
+        Schema::dropIfExists('news_categories');
     }
 };

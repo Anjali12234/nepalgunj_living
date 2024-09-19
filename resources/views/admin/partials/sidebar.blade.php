@@ -207,7 +207,17 @@
                         <span class="micon bi bi-calendar4-week"></span
                         ><span class="mtext">Sub Category</span>
                     </a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-command"></span
+                        ><span class="mtext">News</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{ route('admin.newsCategory.index') }}">Category</a></li>
+                        <li><a href="{{ route('admin.newsList.index') }}">List</a></li>
 
+                    </ul>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">

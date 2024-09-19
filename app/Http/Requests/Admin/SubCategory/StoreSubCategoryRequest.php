@@ -27,7 +27,7 @@ class StoreSubCategoryRequest extends FormRequest
                 Rule::unique('sub_categories', 'slug')
             ],
             'status' => ['nullable','boolean'],
-            'image' => ['required','image'],
+            'image' => ['nullable','image'],
             'category_type' => ['required', new Enum(CategoryTypeEnum::class)],
 
         ];

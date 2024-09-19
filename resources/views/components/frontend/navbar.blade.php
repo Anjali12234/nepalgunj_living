@@ -1,10 +1,13 @@
 <div class="hidden lg:flex cursor-pointer">
     <div class="lg:grid grid-cols-5 hidden gap-7 mr-4 ml-[18.5rem]">
         <div class="text-black font-medium text-left px-2 py-4 block">
-            <p class="text-xs  lg:text-sm whitespace-nowrap">Apartment</p>
-            <p class="text-xs  lg:text-sm whitespace-nowrap">Villa</p>
-            <p class="text-xs  lg:text-sm whitespace-nowrap">Shared</p>
-            <p class="text-xs  lg:text-sm whitespace-nowrap">Other Office</p>
+            @foreach (subCategories() as $subCategory)
+            @if ($subCategory->category_type == \App\Enums\CategoryTypeEnum::PROPERTIES)
+         <a href="{{ route('properties',$subCategory->slug) }}">  <p class="text-xs  lg:text-sm whitespace-nowrap">{{ $subCategory?->title_en }}</p>
+         </a>
+            @endif
+            @endforeach
+
         </div>
         <div class="text-black font-medium text-left px-2 py-4">
             <p class="text-xs  lg:text-sm whitespace-nowrap">Cars for sale</p>
