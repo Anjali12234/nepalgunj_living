@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\BranchController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\NewsCategoryController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PropertyListController;
 use App\Http\Controllers\Admin\RegisteredUserController;
 use App\Http\Controllers\Admin\SettingController;
@@ -22,6 +24,10 @@ Route::prefix('settings')->group(function () {
     Route::resource('setting', SettingController::class);
     Route::resource('branch', BranchController::class);
 });
+Route::resource('newsCategory', NewsCategoryController::class);
+Route::resource('newsList', NewsController::class);
+
+
 Route::prefix('registerdUser')->group(function () {
     Route::resource('registeredUser', RegisteredUserController::class);
     Route::put('registeredUser/{registeredUser}/updateStatus', [RegisteredUserController::class, 'updateStatus'])->name('registeredUser.updateStatus');
