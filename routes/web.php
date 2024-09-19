@@ -17,6 +17,14 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('vehicles', 'vehicles')->name('vehicles');
     Route::get('healthCare','healthcareIndex')->name('healthcareIndex');
     Route::get('doctorlist','listPage')->name('healthcare.listPage');
+    Route::get('mediaclstoreList','medicallistPage')->name('healthcare.medicallistPage');
+    Route::get('doctorDetailpage','doctorDetailPage')->name('healthcare.doctorDetailPage');
+    Route::get('medicalListPage','medicalListPage')->name('healthcare.medicalListPage');
+    Route::get('medicalDetailpage','medicalDetailPage')->name('healthcare.medicalDetailPage');
+    Route::get('hospitalListPage','hospitalListPage')->name('healthcare.hospitalListPage');
+    Route::get('hospitalDetailPage','hospitalDetailPage')->name('healthcare.hospitalDetailPage');
+    Route::get('pharmacyListPage','pharmacyListPage')->name('healthcare.pharmacyListPage');
+    Route::get('pharmacyDetailPage','pharmacyDetailPage')->name('healthcare.pharmacyDetailPage');
 
 });
 
