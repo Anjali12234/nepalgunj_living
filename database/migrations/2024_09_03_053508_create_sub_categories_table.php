@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title_ne');
             $table->string('slug');
             $table->integer('position')->nullable();
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->string('category_type');
             $table->boolean('status')->default(0);
             $table->softDeletes();

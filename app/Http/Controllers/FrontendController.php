@@ -78,6 +78,12 @@ class FrontendController extends Controller
         return view('test');
     }
 
+    public function subCategory(SubCategory $subCategory)
+    {
+        $newsCategory->load('newsLists');
+return view('frontend.property.propertyCategory');
+    }
+
     public function propertyDetails(PropertyList $propertyList)
     {
         return view('frontend.property.propertyDetail', compact('propertyList'));
