@@ -101,6 +101,36 @@ return view('frontend.property.propertyCategory');
     }
     public function listPage()
     {
-        return view('frontend.healthcare.detailPage');
+        return view('frontend.healthcare.listPage');
+    }
+    public function doctorDetailPage()
+    {
+        return view('frontend.healthcare.detailpage');
+
+    }
+    public function medicalListPage()
+    {
+        return view ('frontend.healthcare.medicalList');
+    }
+
+    public function medicalDetailPage()
+    {
+        return view('frontend.healthcare.mdeicalDetail');
+    }
+    public function hospitalListPage()
+    {
+        return view('frontend.healthcare.hospitalListPage');
+    }
+    public function hospitalDetailPage()
+    {
+        return view('frontend.healthcare.hospitalDetailpage');
+    }
+    public function pharmacyListPage()
+    {
+        return view('frontend.healthcare.pharmacyList');
+    }
+    public function pharmacyDetailPage()
+    {
+        return view('frontend.healthcare.pharmacyDetail');
     }
 }
