@@ -169,5 +169,13 @@ class FrontendController extends Controller
     {
         return view('frontend.education.consultancyDetail');
     }
+    public function instituteListPage()
+    {
+        return view('frontend.education.instituteList');
+    }
+    public function instituteDetailPage()
+    {
+        return view('frontend.education.instituteDetail');
+    }
 }
 
