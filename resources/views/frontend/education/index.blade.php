@@ -106,7 +106,7 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Card -->
                 <a class="group border border-green-500 focus:outline-none focus:bg-gray-100 rounded-xl p-5 transition dark:hover:bg-white/10 dark:focus:bg-white/10"
-                href="#">
+                href="">
                 <div class="aspect-w-16 aspect-h-10">
                     <img class="w-full object-cover rounded-xl"
                         src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
@@ -129,7 +129,7 @@
 
                 <!-- Card -->
                 <a class="group border border-green-500 focus:outline-none focus:bg-gray-100 rounded-xl p-5 transition dark:hover:bg-white/10 dark:focus:bg-white/10"
-                    href="#">
+                    href="">
                     <div class="aspect-w-16 aspect-h-10">
                         <img class="w-full object-cover rounded-xl"
                             src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
@@ -152,7 +152,7 @@
 
                 <!-- Card -->
                 <a class="group border border-green-500 focus:outline-none focus:bg-gray-100 rounded-xl p-5 transition dark:hover:bg-white/10 dark:focus:bg-white/10"
-                    href="#">
+                    href="">
                     <div class="aspect-w-16 aspect-h-10">
                         <img class="w-full object-cover rounded-xl"
                             src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
@@ -174,7 +174,7 @@
 
             </div>
             <div class="justify-center items-center text-center mt-8">
-                <a href="{{ route('education.campusListpage') }}"
+                <a href="{{ route('education.collegeListPage') }}"
                     class="text-center bg-black text-white px-8 py-3 rounded-full hover:text-green-400">View More
                 </a>
             </div>
