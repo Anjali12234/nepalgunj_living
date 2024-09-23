@@ -27,6 +27,8 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('hospitalDetailPage','hospitalDetailPage')->name('healthcare.hospitalDetailPage');
     Route::get('pharmacyListPage','pharmacyListPage')->name('healthcare.pharmacyListPage');
     Route::get('pharmacyDetailPage','pharmacyDetailPage')->name('healthcare.pharmacyDetailPage');
+    Route::get('education','educationIndexPage')->name('education.IndexPage');
+
 
 });
 

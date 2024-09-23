@@ -42,8 +42,8 @@ style="">
             <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='{{ route('healthcareIndex') }}'
                     class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Health Care</a>
             </li>
-            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
-                    class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Services</a>
+            <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='{{ route('education.IndexPage') }}'
+                    class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Educations</a>
             </li>
             <li class='max-lg:border-b border-gray-300 max-lg:py-3 px-3'><a href='javascript:void(0)'
                     class='hover:text-[#007bff] text-gray-500 block font-semibold text-[15px]'>Jobs</a>

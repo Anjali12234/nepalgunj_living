@@ -49,7 +49,7 @@ class FrontendController extends Controller
 
         $properties = $properties->orderBy('position')->get();
 
-        return view('frontend.property.properties', compact('properties', 'subCategories','search'));
+        return view('frontend.property.properties', compact('properties', 'subCategories', 'search'));
     }
 
 
@@ -80,8 +80,8 @@ class FrontendController extends Controller
 
     public function subCategory(SubCategory $subCategory)
     {
-        $newsCategory->load('newsLists');
-return view('frontend.property.propertyCategory');
+        $subCategory->load('newsLists');
+        return view('frontend.property.propertyCategory');
     }
 
     public function propertyDetails(PropertyList $propertyList)
@@ -106,11 +106,10 @@ return view('frontend.property.propertyCategory');
     public function doctorDetailPage()
     {
         return view('frontend.healthcare.detailpage');
-
     }
     public function medicalListPage()
     {
-        return view ('frontend.healthcare.medicalList');
+        return view('frontend.healthcare.medicalList');
     }
 
     public function medicalDetailPage()
@@ -132,5 +131,10 @@ return view('frontend.property.propertyCategory');
     public function pharmacyDetailPage()
     {
         return view('frontend.healthcare.pharmacyDetail');
+    }
+
+    public function educationIndexPage()
+    {
+        return view('frontend.education.index');
     }
 }
