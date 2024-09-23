@@ -32,6 +32,8 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('campusDetail','campusDetailPage')->name('education.campusDetailPage');
     Route::get('collegeList','collegeListPage')->name('education.collegeListPage');
     Route::get('collegeDetail','collegeDetailPage')->name('education.collegeDetailPage');
+    Route::get('schoolList','schoolListPage')->name('education.schoolListPage');
+    Route::get('schoolDetail','schoolDetailPage')->name('education.schoolDetailPage');
 
 
 });
