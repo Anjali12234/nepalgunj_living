@@ -137,4 +137,12 @@ class FrontendController extends Controller
     {
         return view('frontend.education.index');
     }
+    public function campusListPage()
+    {
+        return view('frontend.education.campusList');
+    }
+    public function campusDetailPage()
+    {
+        return view('frontend.education.campusDetail');
+    }
 }
