@@ -358,7 +358,7 @@
 
             </div>
             <div class="justify-center items-center text-center mt-8">
-                <a href="{{ route('healthcare.listPage') }}"
+                <a href="{{ route('education.consultancyListPage') }}"
                     class="text-center bg-black text-white px-8 py-3 rounded-full hover:text-green-400">View More
                 </a>
             </div>
