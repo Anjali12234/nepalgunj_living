@@ -12,11 +12,12 @@
                             <a href="{{ route('newsDetail') }}">
 
 
-                            <img src="https://files.qatarliving.com/styles/image_h_xlarge_1600x900/s3/post/2024/09/02/QATAR_JOB_LEAD_QATAR_LIVING.jpg?itok=wY_y3VTj"
-                                alt="Qatar flags" class="w-[55rem] h-[400px]  mb-4">
-                            <h2 class="text-2xl font-bold mb-2">HH The Amir issues new law on nationalization of private
-                                sector
-                                jobs</h2>
+                                <img src="https://files.qatarliving.com/styles/image_h_xlarge_1600x900/s3/post/2024/09/02/QATAR_JOB_LEAD_QATAR_LIVING.jpg?itok=wY_y3VTj"
+                                    alt="Qatar flags" class="w-[55rem] h-[400px]  mb-4">
+                                <h2 class="text-2xl font-bold mb-2">HH The Amir issues new law on nationalization of
+                                    private
+                                    sector
+                                    jobs</h2>
                             </a>
                             <p class="text-gray-600 mb-4 mr-28 items-center justify-center">HH The Amir Sheikh Tamim bin
                                 Hamad Al
@@ -33,43 +34,57 @@
 
                         </div>
 
-                        <div class="flex items-center space-x-4 mb-4 mt-8">
-                            <img src="https://files.qatarliving.com/styles/image_h_medium_440x248/s3/post/2024/09/01/LUSAIL_UNIVERSITY_LEAD_QATAR_LIVING.jpg?itok=ktogHvfU"
-                                alt="Scam websites" class="w-54 h-32">
+                        <a href="{{ route('newsDetail') }}">
+                            <div class="flex items-center space-x-4 mb-4 mt-8">
 
-                            <div>
-                                <p class="text-fuchsia-600 text-xs font-bold">NEWS</p>
-                                <h3 class="text-lg font-semibold">
-                                    Lusail University starts feasibility study to open nurseries on campus
-                                </h3>
-                                <p class="text-sm mr-20">
-                                    Lusail University is currently undertaking a feasibility study to open nurseries for
-                                    very
-                                    young children. The aim is to help and support mothers in completing their
-                                    educational
-                                    careers after marriage and giving birth.
-                                </p>
+
+                                <img src="https://files.qatarliving.com/styles/image_h_medium_440x248/s3/post/2024/09/01/LUSAIL_UNIVERSITY_LEAD_QATAR_LIVING.jpg?itok=ktogHvfU"
+                                    alt="Scam websites" class="w-54 h-32">
+
+                                <div>
+
+                                    <p class="text-fuchsia-600 text-xs font-bold">NEWS</p>
+                                    <h3 class="text-lg font-semibold">
+                                        Lusail University starts feasibility study to open nurseries on campus
+                                    </h3>
+
+                                    <p class="text-sm mr-20">
+                                        Lusail University is currently undertaking a feasibility study to open nurseries
+                                        for
+                                        very
+                                        young children. The aim is to help and support mothers in completing their
+                                        educational
+                                        careers after marriage and giving birth.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+
                         <hr>
-                        <div class="flex items-center space-x-4 mb-4 mt-8">
-                            <img src="https://files.qatarliving.com/styles/image_h_medium_440x248/s3/post/2024/09/01/OVERTAKING_LEAD_QATAR_LIVING.jpeg?itok=tJfAVC8i"
-                                alt="Scam websites" class="w-54 h-32">
+                        <a href="{{ route('newsDetail') }}">
+                            <div class="flex items-center space-x-4 mb-4 mt-8">
+                                <img src="https://files.qatarliving.com/styles/image_h_medium_440x248/s3/post/2024/09/01/OVERTAKING_LEAD_QATAR_LIVING.jpeg?itok=tJfAVC8i"
+                                    alt="Scam websites" class="w-54 h-32">
 
-                            <div>
-                                <p class="text-fuchsia-600 text-xs font-bold">NEWS</p>
-                                <h3 class="text-lg font-semibold">
-                                    50% discount period for traffic fines extended until November 30
-                                </h3>
-                                <p class="text-sm mr-20">
-                                    Qatar’s Ministry of Interior announced a three-month extension to the 50% discount
-                                    that
-                                    had been offered for traffic violations in the country. The extension will now be in
-                                    effect until November 30 and will cover all vehicles, including those of citizens,
-                                    residents, and visitors, in addition to citizens and GCC residents.
-                                </p>
+                                <div>
+                                    <p class="text-fuchsia-600 text-xs font-bold">NEWS</p>
+                                    <h3 class="text-lg font-semibold">
+                                        50% discount period for traffic fines extended until November 30
+                                    </h3>
+                                    <p class="text-sm mr-20">
+                                        Qatar’s Ministry of Interior announced a three-month extension to the 50%
+                                        discount
+                                        that
+                                        had been offered for traffic violations in the country. The extension will now
+                                        be in
+                                        effect until November 30 and will cover all vehicles, including those of
+                                        citizens,
+                                        residents, and visitors, in addition to citizens and GCC residents.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+
 
 
                     </div>
@@ -79,12 +94,15 @@
 
                     <!-- Sidebar News Items -->
                     <div class="space-y-6">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <img src="https://files.qatarliving.com/styles/image_h_small_300x169/s3/post/2022/08/17/SCAM_WEBSITES_SCAM_ACCOUNTS_QATAR.jpg?itok=O9ubELV4"
-                                alt="Scam websites" class="w-44 h-24">
-                            <h3 class="text-sm font-semibold">How to spot scam websites & social media accounts in Qatar
-                            </h3>
-                        </div>
+                        <a href="{{ route('newsDetail') }}">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <img src="https://files.qatarliving.com/styles/image_h_small_300x169/s3/post/2022/08/17/SCAM_WEBSITES_SCAM_ACCOUNTS_QATAR.jpg?itok=O9ubELV4"
+                                    alt="Scam websites" class="w-44 h-24">
+                                <h3 class="text-sm font-semibold">How to spot scam websites & social media accounts in
+                                    Qatar
+                                </h3>
+                            </div>
+                        </a>
                         <hr>
                         <div class="flex items-center space-x-4 mb-4">
                             <img src="https://files.qatarliving.com/styles/image_h_small_300x169/s3/post/2024/09/02/WhatsApp%20Image%202024-09-02%20at%2015.56.50.jpg?itok=TDaVpNeu"
@@ -1028,7 +1046,8 @@
                 <div>
                     <h2 class="text-lg font-semibold text-gray-700 mb-2">Subscribe for our news and updates</h2>
                     <div class="flex">
-                        <input type="email" placeholder="Email" class="border border-gray-300 p-2 flex-grow mr-2" />
+                        <input type="email" placeholder="Email"
+                            class="border border-gray-300 p-2 flex-grow mr-2" />
                         <button class="bg-purple-700 text-white px-4 py-2">Subscribe</button>
                     </div>
                 </div>
@@ -1066,8 +1085,12 @@
                 <div>
                     <h2 class="text-lg font-semibold text-gray-700 mb-2">Qatar Living Classifieds App</h2>
                     <div class="flex space-x-2">
-                        <a href="#" class="block"><img src="https://www.qatarliving.com/sites/all/themes/qatarliving_v3/images/badge-app-store.png" alt="Download on the App Store" class="h-12"></a>
-                        <a href="#" class="block"><img src="https://www.qatarliving.com/sites/all/themes/qatarliving_v3/images/badge-google-playstore.png" alt="Get it on Google Play" class="h-12"></a>
+                        <a href="#" class="block"><img
+                                src="https://www.qatarliving.com/sites/all/themes/qatarliving_v3/images/badge-app-store.png"
+                                alt="Download on the App Store" class="h-12"></a>
+                        <a href="#" class="block"><img
+                                src="https://www.qatarliving.com/sites/all/themes/qatarliving_v3/images/badge-google-playstore.png"
+                                alt="Get it on Google Play" class="h-12"></a>
                     </div>
                 </div>
             </div>
@@ -1192,6 +1215,6 @@
             </div>
         </div>
 
-    </div>  <!-- ========== END FOOTER ========== -->
+    </div> <!-- ========== END FOOTER ========== -->
 
 </x-guest-layout>
