@@ -16,6 +16,10 @@ class FrontendController extends Controller
         $categories = Category::all();
         return view('welcome', compact('categories'));
     }
+     public function newsDetail()
+{
+    return view ('frontend.news.Detail');
+}
 
     public function properties(Request $request, $subCategorySlug = null)
     {

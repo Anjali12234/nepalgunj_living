@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(FrontendController::class)->group(function () {
     Route::get('/', 'index')->name('home');
+    Route::get('newsDetail','newsDetail')->name('newsDetail');
     Route::get('/properties/{subCategorySlug?}', 'properties')->name('properties');
     Route::get('/properties/{subCategorySlug?}', 'subCategory')->name('properties');
     Route::get('test', 'test')->name('test');
