@@ -119,18 +119,19 @@
             </div>
 
             <!-- Testimonial Section -->
+            <!-- Testimonial Section -->
             <div class="relative px-2 py-4 sm:px-6 lg:px-8 lg:py-14 mx-auto">
                 <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">What Our Students Say</h2>
 
                 <!-- Testimonials Wrapper -->
                 <div class="relative overflow-hidden">
                     <!-- Slider Container (Flex instead of Grid for horizontal layout) -->
-                    <div id="testimonial-slider" class="flex transition-transform duration-300 gap-4">
+                    <div id="testimonial-slider" class="flex transition-transform duration-300 gap-2">
                         <!-- Testimonial 1 -->
                         <div
                             class="w-full lg:w-[48%] flex-shrink-0 bg-white border border-green-500 rounded-xl p-6 shadow-md">
                             <div class="flex items-center mb-4">
-                                <img class="w-14 h-16 rounded-full object-cover"
+                                <img class="w-16 h-16 rounded-full object-cover"
                                     src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student Image">
                                 <div class="ml-4">
                                     <h3 class="text-lg font-semibold text-gray-800">Alex Smith</h3>
@@ -203,6 +204,7 @@
 
 
 
+
         </div>
 
 
@@ -218,29 +220,64 @@
             const nextButton = document.getElementById('nextButton');
 
             let currentIndex = 0;
-            const testimonials = slider.children.length;
-            const testimonialWidth = slider.children[0].offsetWidth;
+            const testimonials = slider.children.length; // Total number of testimonials
+            const testimonialsPerView = 2; // Number of testimonials to show at a time (2 for lg screens)
+            const testimonialWidth = slider.children[0].offsetWidth; // Each testimonial's width
+
+            // Duplicate the testimonials to create an infinite loop effect
+            for (let i = 0; i < testimonials; i++) {
+                const clone = slider.children[i].cloneNode(true);
+                slider.appendChild(clone);
+            }
+
+            let maxIndex = testimonials; // Updated max index after cloning
 
             // Move to next testimonial
             nextButton.addEventListener('click', function() {
-                if (currentIndex < testimonials - 1) {
+                if (currentIndex < maxIndex) {
                     currentIndex++;
-                } else {
-                    currentIndex = 0; // Loop back to the first testimonial
                 }
+
                 slider.style.transform = `translateX(-${testimonialWidth * currentIndex}px)`;
+
+                // Seamlessly reset position for infinite loop when reaching end
+                if (currentIndex >= maxIndex) {
+                    setTimeout(() => {
+                        slider.style.transition = 'none'; // Disable transition for smooth looping
+                        currentIndex = 0; // Reset index
+                        slider.style.transform = `translateX(0)`; // Reset position
+                        setTimeout(() => {
+                            slider.style.transition =
+                            'transform 0.3s ease'; // Re-enable transition after reset
+                        }, 20); // Re-enable transition after a tiny delay
+                    }, 300); // Wait until the slide transition ends
+                }
             });
 
             // Move to previous testimonial
             prevButton.addEventListener('click', function() {
                 if (currentIndex > 0) {
                     currentIndex--;
-                } else {
-                    currentIndex = testimonials - 1; // Loop back to the last testimonial
                 }
+
                 slider.style.transform = `translateX(-${testimonialWidth * currentIndex}px)`;
+
+                // Seamlessly loop to the last slide when going back from the first slide
+                if (currentIndex < 0) {
+                    setTimeout(() => {
+                        slider.style.transition = 'none'; // Disable transition for smooth looping
+                        currentIndex = maxIndex - 1; // Set index to last cloned slide
+                        slider.style.transform =
+                        `translateX(-${testimonialWidth * currentIndex}px)`;
+                        setTimeout(() => {
+                            slider.style.transition =
+                            'transform 0.3s ease'; // Re-enable transition after reset
+                        }, 20); // Re-enable transition after a tiny delay
+                    }, 300); // Wait until the slide transition ends
+                }
             });
         });
     </script>
+
 
 </x-guest-layout>
