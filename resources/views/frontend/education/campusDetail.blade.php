@@ -7,8 +7,12 @@
                 <div class="flex justify-between items-center">
                     <h1 class="text-xl font-bold text-gray-800">Campus</h1>
                     <div class="flex gap-4">
-                        <a href="#" class="text-white bg-green-300 hover:bg-green-500 rounded-full px-4 py-2 flex justify-center "><i class="ti ti-arrow-left text-xl"></i></a>
-                        <a href="#" class="text-white bg-green-300 hover:bg-green-500  rounded-full px-4 py-2 flex justify-center "><i class="ti ti-arrow-right text-xl"></i></a>
+                        <a href="#"
+                            class="text-white bg-green-300 hover:bg-green-500 rounded-full px-4 py-2 flex justify-center "><i
+                                class="ti ti-arrow-left text-xl"></i></a>
+                        <a href="#"
+                            class="text-white bg-green-300 hover:bg-green-500  rounded-full px-4 py-2 flex justify-center "><i
+                                class="ti ti-arrow-right text-xl"></i></a>
                     </div>
                 </div>
             </div>
@@ -89,17 +93,17 @@
 
                     <!-- Card 3 -->
                     <a class="group border border-green-500 focus:outline-none focus:bg-gray-100 rounded-xl p-5 transition dark:hover:bg-white/10 dark:focus:bg-white/10 h-[20rem] w-[22rem]"
-                    href="{{ route('education.campusDetailPage') }}">
-                    <div class="aspect-w-16 aspect-h-10">
-                        <img class="w-full object-cover rounded-xl"
-                            src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
-                            alt="Campus Image">
-                    </div>
-                    <h3 class="mt-3 text-lg font-semibold text-gray-800 group-hover:text-gray-400">Dr. John Doe</h3>
-                    <p class="mt-1 text-gray-600">Dean of Medicine</p>
+                        href="{{ route('education.campusDetailPage') }}">
+                        <div class="aspect-w-16 aspect-h-10">
+                            <img class="w-full object-cover rounded-xl"
+                                src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80"
+                                alt="Campus Image">
+                        </div>
+                        <h3 class="mt-3 text-lg font-semibold text-gray-800 group-hover:text-gray-400">Dr. John Doe</h3>
+                        <p class="mt-1 text-gray-600">Dean of Medicine</p>
 
 
-                </a>
+                    </a>
                 </div>
 
 
@@ -113,6 +117,84 @@
                     class="inline-block bg-green-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-green-600">Apply
                     Now</a>
             </div>
+
+
+          <!-- Testimonial Section -->
+<!-- Testimonial Section -->
+<div class="relative px-2 py-4 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <h2 class="text-2xl font-bold text-center text-gray-900 mb-8">What Our Students Say</h2>
+
+    <!-- Testimonials Wrapper -->
+    <div class="relative overflow-hidden">
+        <!-- Slider Container (Flex instead of Grid for horizontal layout) -->
+        <div id="testimonial-slider" class="flex transition-transform duration-300 gap-4">
+            <!-- Testimonial 1 -->
+            <div class="w-full lg:w-[48%] flex-shrink-0 bg-white border border-green-500 rounded-xl p-6 shadow-md">
+                <div class="flex items-center mb-4">
+                    <img class="w-14 h-16 rounded-full object-cover"
+                        src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student Image">
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Alex Smith</h3>
+                        <p class="text-sm text-gray-600">Computer Science Student</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">"Studying at Campus Name has been an incredible journey. The faculty is
+                    extremely supportive, and the learning environment is top-notch."</p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="w-full lg:w-[48%] flex-shrink-0 bg-white border border-green-500 rounded-xl p-6 shadow-md">
+                <div class="flex items-center mb-4">
+                    <img class="w-16 h-16 rounded-full object-cover"
+                        src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student Image">
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Sarah Johnson</h3>
+                        <p class="text-sm text-gray-600">Business Management Student</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">"The campus facilities and academic support have exceeded my expectations. I couldn't have chosen a better place to study!"</p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="w-full lg:w-[48%] flex-shrink-0 bg-white border border-green-500 rounded-xl p-6 shadow-md">
+                <div class="flex items-center mb-4">
+                    <img class="w-16 h-16 rounded-full object-cover"
+                        src="https://randomuser.me/api/portraits/men/46.jpg" alt="Student Image">
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-gray-800">John Doe</h3>
+                        <p class="text-sm text-gray-600">Engineering Student</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">"Campus Name has provided me with the best opportunities to grow and excel academically and professionally."</p>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="w-full lg:w-[48%] flex-shrink-0 bg-white border border-green-500 rounded-xl p-6 shadow-md">
+                <div class="flex items-center mb-4">
+                    <img class="w-16 h-16 rounded-full object-cover"
+                        src="https://randomuser.me/api/portraits/women/23.jpg" alt="Student Image">
+                    <div class="ml-4">
+                        <h3 class="text-lg font-semibold text-gray-800">Lisa Brown</h3>
+                        <p class="text-sm text-gray-600">Psychology Student</p>
+                    </div>
+                </div>
+                <p class="text-gray-700">"The learning environment here is unparalleled. The faculty is knowledgeable and supportive, and I've made amazing friends."</p>
+            </div>
+
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button id="prevButton" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-transparent shadow-md text-black px-4 py-2 rounded-full">
+            <i class="ti ti-arrow-left"></i>
+        </button>
+        <button id="nextButton" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-transparent shadow-md text-black px-4 py-2 rounded-full">
+            <i class="ti ti-arrow-right"></i>
+        </button>
+    </div>
+</div>
+
+
+
         </div>
 
 
@@ -121,4 +203,36 @@
 
 
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('testimonial-slider');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+
+            let currentIndex = 0;
+            const testimonials = slider.children.length;
+            const testimonialWidth = slider.children[0].offsetWidth;
+
+            // Move to next testimonial
+            nextButton.addEventListener('click', function () {
+                if (currentIndex < testimonials - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0; // Loop back to the first testimonial
+                }
+                slider.style.transform = `translateX(-${testimonialWidth * currentIndex}px)`;
+            });
+
+            // Move to previous testimonial
+            prevButton.addEventListener('click', function () {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                } else {
+                    currentIndex = testimonials - 1; // Loop back to the last testimonial
+                }
+                slider.style.transform = `translateX(-${testimonialWidth * currentIndex}px)`;
+            });
+        });
+    </script>
+
 </x-guest-layout>
