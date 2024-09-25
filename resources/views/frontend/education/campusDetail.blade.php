@@ -248,7 +248,7 @@
                         slider.style.transform = `translateX(0)`; // Reset position
                         setTimeout(() => {
                             slider.style.transition =
-                            'transform 0.3s ease'; // Re-enable transition after reset
+                                'transform 0.3s ease'; // Re-enable transition after reset
                         }, 20); // Re-enable transition after a tiny delay
                     }, 300); // Wait until the slide transition ends
                 }
@@ -268,10 +268,10 @@
                         slider.style.transition = 'none'; // Disable transition for smooth looping
                         currentIndex = maxIndex - 1; // Set index to last cloned slide
                         slider.style.transform =
-                        `translateX(-${testimonialWidth * currentIndex}px)`;
+                            `translateX(-${testimonialWidth * currentIndex}px)`;
                         setTimeout(() => {
                             slider.style.transition =
-                            'transform 0.3s ease'; // Re-enable transition after reset
+                                'transform 0.3s ease'; // Re-enable transition after reset
                         }, 20); // Re-enable transition after a tiny delay
                     }, 300); // Wait until the slide transition ends
                 }
